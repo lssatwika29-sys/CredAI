@@ -222,6 +222,11 @@ Add your actual application screenshots here.
 **Project Type:** Academic Mini Project
 
 **Repository:** https://github.com/lssatwika29-sys/CredAI
+<img width="1920" height="1080" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/402e90ef-2bc1-4be3-95ba-54448c5964ce" />
+<img width="1920" height="1080" alt="Screenshot (93)" src="https://github.com/user-attachments/assets/52bdaacd-13c6-4457-9db9-5ce1f5474953" />
+<img width="1920" height="1080" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/3b7aaa9e-22dd-433d-bb21-d33903ef145a" />
+<img width="1920" height="1080" alt="Screenshot (91)" src="https://github.com/user-attachments/assets/ff6c2d1e-5e36-4c13-b190-7f1692134c75" />
+<img width="1920" height="1080" alt="Screenshot (90)" src="https://github.com/user-attachments/assets/232f6a3e-e072-4b3f-997f-5d03d0fae90e" />
 
 ---
 
