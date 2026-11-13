@@ -222,11 +222,12 @@ Add your actual application screenshots here.
 **Project Type:** Academic Mini Project
 
 **Repository:** https://github.com/lssatwika29-sys/CredAI
-<img width="1920" height="903" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/8797a2a1-09c3-4493-aa0b-73d9e19d667f" />
-<img width="1920" height="916" alt="Screenshot (93)" src="https://github.com/user-attachments/assets/548739ba-b0fc-4177-9a16-7e4e8f8bf480" />
-<img width="1920" height="939" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/74ce6af7-c6de-444e-92b2-7891fecc21b5" />
-<img width="1920" height="928" alt="Screenshot (91)" src="https://github.com/user-attachments/assets/6525416f-6c51-481a-a9c7-b583b2450d30" />
-<img width="1920" height="926" alt="Screenshot (90)" src="https://github.com/user-attachments/assets/26a6110a-6d0d-4d4f-9597-315833a54567" />
+<img width="1920" height="903" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/0eda6fa4-a78a-44b7-90ec-a2914602c4a8" />
+<img width="1920" height="916" alt="Screenshot (93)" src="https://github.com/user-attachments/assets/05116288-da2d-446c-86ee-74f54c4c84da" />
+<img width="1920" height="939" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/c37dbd3b-8ec4-4940-8a8f-bb59f0647435" />
+<img width="1920" height="928" alt="Screenshot (91)" src="https://github.com/user-attachments/assets/3a37756e-3562-48a1-adff-1843017a039f" />
+<img width="1920" height="926" alt="Screenshot (90)" src="https://github.com/user-attachments/assets/2e9549f2-4f9f-4e35-ae1a-1dd6df284013" />
+
 
 
 <img width="1920" height="1080" alt="Screenshot (90)" src="https://github.com/user-attachments/assets/232f6a3e-e072-4b3f-997f-5d03d0fae90e" />
