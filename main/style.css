@@ -1,0 +1,6277 @@
+/* =========================================
+   CREDAI — CREDIT RISK DASHBOARD
+   Complete style.css
+========================================= */
+
+:root {
+    --bg: #f5f7f4;
+    --surface: #ffffff;
+    --green-dark: #10251b;
+    --green: #176b45;
+    --green-light: #e4f4e9;
+    --green-bright: #32a66a;
+    --text: #18251e;
+    --muted: #738077;
+    --border: #e4e9e4;
+    --red: #d84b4b;
+    --red-light: #fff0ef;
+    --shadow: 0 12px 35px rgba(21, 46, 31, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+
+body {
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(50, 166, 106, 0.35);
+    outline-offset: 3px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* HEADER */
+
+.topbar {
+    min-height: 76px;
+    padding: 14px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--green-dark);
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.brand strong {
+    display: block;
+    font-size: 21px;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+}
+
+.brand small {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.live-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #d7a23a;
+}
+
+.live-dot.connected {
+    background: var(--green-bright);
+}
+
+.live-dot.disconnected {
+    background: var(--red);
+}
+
+.connection {
+    color: var(--muted);
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: min(1120px, 88%);
+    margin: 0 auto;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 330px;
+    margin-top: 35px;
+    padding: 45px 48px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 35px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    background: var(--green-dark);
+    color: white;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.hero .eyebrow {
+    color: #8ce2ac;
+}
+
+.hero h1 {
+    max-width: 500px;
+    margin: 13px 0 15px;
+    font-size: clamp(35px, 4.5vw, 53px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: #8ce2ac;
+}
+
+.hero-copy > p {
+    max-width: 440px;
+    color: #c0d0c5;
+    font-size: 14px;
+}
+
+.hero-link {
+    width: fit-content;
+    margin-top: 25px;
+    padding: 11px 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    border-radius: 9px;
+    background: #8ce2ac;
+    color: var(--green-dark);
+    font-size: 12px;
+    font-weight: 800;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.hero-link:hover {
+    transform: translateY(-2px);
+    background: #b0f0c5;
+}
+
+/* HERO DECORATION */
+
+.hero-art {
+    min-height: 235px;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(140, 226, 172, 0.17);
+    border-radius: 50%;
+}
+
+.orbit-one {
+    width: 270px;
+    height: 270px;
+}
+
+.orbit-two {
+    width: 205px;
+    height: 205px;
+}
+
+.art-card {
+    width: min(285px, 100%);
+    padding: 23px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(12px);
+    transform: rotate(-3deg);
+}
+
+.art-label {
+    color: #b9d9c4;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.art-chart {
+    height: 100px;
+    margin-top: 22px;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.art-chart span {
+    flex: 1;
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(180deg, #8ce2ac, #26794c);
+}
+
+.art-footer {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    color: #c0d0c5;
+    font-size: 10px;
+}
+
+.art-footer strong {
+    color: #8ce2ac;
+}
+
+.floating-badge {
+    position: absolute;
+    right: -3px;
+    bottom: 12px;
+    z-index: 2;
+    padding: 10px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    background: #234333;
+    color: #d5f5df;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* OVERVIEW CARDS */
+
+.overview-grid {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.overview-card {
+    min-width: 0;
+    padding: 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.overview-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--green-light);
+    color: var(--green);
+    font-size: 22px;
+}
+
+.overview-card p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.overview-card h2 {
+    margin-top: 3px;
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.overview-card small {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* SECTION HEADINGS */
+
+.section-heading,
+.history-heading {
+    margin: 45px 0 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.section-heading h2,
+.history-heading h2 {
+    margin-top: 5px;
+    font-size: 26px;
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+}
+
+.section-heading p,
+.history-heading p {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.field-count {
+    flex-shrink: 0;
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: white;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+/* FORM */
+
+.form-card {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.form-section-title {
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.section-number {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: var(--green-light);
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.form-section-title h3 {
+    font-size: 16px;
+}
+
+.form-section-title p {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.second-section {
+    margin-top: 34px;
+    padding-top: 29px;
+    border-top: 1px solid var(--border);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 21px 23px;
+}
+
+.form-grid label {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #35453b;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.required {
+    color: var(--red);
+}
+
+.form-grid input,
+.form-grid select {
+    width: 100%;
+    min-height: 45px;
+    padding: 10px 12px;
+    border: 1px solid #dfe6df;
+    border-radius: 9px;
+    background: #fcfdfc;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 500;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-grid input::placeholder {
+    color: #a0aaa2;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+    border-color: var(--green-bright);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(50, 166, 106, 0.1);
+}
+
+.form-grid input:invalid:not(:placeholder-shown) {
+    border-color: var(--red);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.field-help {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 400;
+}
+
+/* FORM BUTTON */
+
+.form-actions {
+    margin-top: 30px;
+    padding-top: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.form-actions p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+#submitButton {
+    min-height: 46px;
+    padding: 0 19px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: none;
+    border-radius: 9px;
+    background: var(--green);
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#submitButton:hover:not(:disabled) {
+    background: var(--green-dark);
+    transform: translateY(-1px);
+}
+
+#submitButton:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+.form-message,
+.history-message {
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.form-message.error,
+.history-message.error {
+    color: var(--red);
+}
+
+.form-message.success {
+    color: var(--green);
+}
+
+/* ASSESSMENT RESULT */
+
+.result-card {
+    margin-top: 25px;
+    padding: 27px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.result-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.result-heading h2 {
+    margin-top: 4px;
+    font-size: 23px;
+}
+
+.risk-badge {
+    padding: 7px 12px;
+    border-radius: 30px;
+    background: #edf1ed;
+    color: #526157;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.risk-badge.low-risk {
+    background: var(--green-light);
+    color: var(--green);
+}
+
+.risk-badge.high-risk {
+    background: var(--red-light);
+    color: var(--red);
+}
+
+.result-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.risk-summary,
+.probability-panel {
+    padding: 21px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fafcf9;
+}
+
+.risk-summary > p:first-child,
+.probability-panel > p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.risk-summary h3 {
+    margin-top: 8px;
+    font-size: 22px;
+    overflow-wrap: anywhere;
+}
+
+.risk-summary > p:last-child {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.probability-line {
+    margin-top: 9px;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.probability-line strong {
+    font-size: 32px;
+    letter-spacing: -1px;
+}
+
+.probability-line span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.meter-track {
+    height: 9px;
+    margin-top: 17px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e8eee8;
+}
+
+.meter-fill {
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--green-bright);
+    transition: width 0.4s ease;
+}
+
+.meter-fill.high-risk {
+    background: var(--red);
+}
+
+.meter-labels {
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.result-note {
+    margin-top: 17px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* HISTORY SECTION */
+
+.history-section {
+    margin-top: 49px;
+}
+
+.history-heading {
+    margin-top: 0;
+}
+
+.secondary-button {
+    padding: 9px 13px;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: white;
+    color: #526157;
+    font-size: 11px;
+    font-weight: 700;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.secondary-button:hover {
+    border-color: var(--red);
+    background: var(--red-light);
+    color: var(--red);
+}
+
+/* ANALYTICS SUMMARY */
+
+.stats-row {
+    margin-top: 23px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.stat-card {
+    min-width: 0;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.stat-card > span {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stat-card > strong {
+    margin-top: 7px;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -1.3px;
+    overflow-wrap: anywhere;
+}
+
+.stat-card > small {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.low-stat {
+    border-top: 3px solid var(--green-bright);
+}
+
+.low-stat > strong {
+    color: var(--green);
+}
+
+.high-stat {
+    border-top: 3px solid var(--red);
+}
+
+.high-stat > strong {
+    color: var(--red);
+}
+
+/* ANALYTICS CHART CARDS */
+
+.analytics-grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.chart-card {
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.chart-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.chart-heading h3 {
+    font-size: 15px;
+    letter-spacing: -0.3px;
+}
+
+.chart-heading p {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* DONUT CHART */
+
+.donut-layout {
+    min-height: 230px;
+    padding: 23px 0 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.risk-donut {
+    width: 166px;
+    height: 166px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: conic-gradient(
+        #32a66a 0% 100%,
+        #d84b4b 100% 100%
+    );
+    position: relative;
+}
+
+.risk-donut::before {
+    content: "";
+    width: 111px;
+    height: 111px;
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+}
+
+.donut-hole {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donut-hole strong {
+    font-size: 29px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.donut-hole span {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.chart-legend {
+    min-width: 115px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.chart-legend > div {
+    display: grid;
+    grid-template-columns: 10px 1fr auto;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+}
+
+.chart-legend > div > span:nth-child(2) {
+    color: var(--muted);
+}
+
+.chart-legend strong {
+    font-size: 13px;
+}
+
+.legend-dot {
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.low-dot {
+    background: var(--green-bright);
+}
+
+.high-dot {
+    background: var(--red);
+}
+
+/* ACTIVITY BAR CHART */
+
+.activity-chart {
+    min-height: 190px;
+    margin-top: 27px;
+    padding: 10px 0 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    background-image: linear-gradient(
+        to bottom,
+        transparent calc(25% - 1px),
+        #edf1ed calc(25% - 1px),
+        #edf1ed 25%,
+        transparent 25%,
+        transparent calc(50% - 1px),
+        #edf1ed calc(50% - 1px),
+        #edf1ed 50%,
+        transparent 50%,
+        transparent calc(75% - 1px),
+        #edf1ed calc(75% - 1px),
+        #edf1ed 75%,
+        transparent 75%
+    );
+}
+
+.activity-column {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 7px;
+}
+
+.activity-value {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.activity-bar-track {
+    width: 100%;
+    max-width: 34px;
+    height: 125px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.activity-bar {
+    width: 100%;
+    min-height: 3px;
+    border-radius: 6px 6px 0 0;
+    background: linear-gradient(180deg, #56c783, #176b45);
+    transition: height 0.3s ease;
+}
+
+.activity-date {
+    padding-bottom: 9px;
+    color: var(--muted);
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.chart-empty {
+    margin-top: 13px;
+    color: var(--muted);
+    font-size: 10px;
+    text-align: center;
+}
+
+/* HISTORY TABLE */
+
+.history-message {
+    margin: 20px 0 12px;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--surface);
+}
+
+table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background: #f8faf7;
+}
+
+th {
+    padding: 15px 17px;
+    color: #657368;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+}
+
+td {
+    padding: 16px 17px;
+    border-top: 1px solid #edf0ed;
+    color: #34443a;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+tbody tr:hover {
+    background: #fafcf9;
+}
+
+.empty-row {
+    padding: 30px 15px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.risk-label {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.risk-label.low-risk {
+    background: var(--green-light);
+    color: var(--green);
+}
+
+.risk-label.high-risk {
+    background: var(--red-light);
+    color: var(--red);
+}
+
+.history-footnote {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* DISCLAIMER */
+
+.disclaimer {
+    margin: 35px 0;
+    padding: 17px 19px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border: 1px solid #e6e8d8;
+    border-radius: 12px;
+    background: #fffef7;
+}
+
+.disclaimer-icon {
+    color: #a18a37;
+    font-size: 18px;
+}
+
+.disclaimer p {
+    color: #716b52;
+    font-size: 11px;
+}
+
+.disclaimer strong {
+    color: #514a32;
+}
+
+/* FOOTER */
+
+.footer {
+    min-height: 75px;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid var(--border);
+    background: white;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.footer span:first-child {
+    color: var(--green-dark);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+    .container {
+        width: 92%;
+    }
+
+    .topbar {
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    .hero {
+        padding: 35px;
+        grid-template-columns: 1fr 0.7fr;
+        gap: 15px;
+    }
+
+    .hero-art {
+        transform: scale(0.9);
+    }
+
+    .overview-grid {
+        gap: 10px;
+    }
+
+    .overview-card {
+        padding: 16px;
+        gap: 10px;
+    }
+
+    .overview-card h2 {
+        font-size: 14px;
+    }
+
+    .analytics-grid {
+        gap: 13px;
+    }
+
+    .chart-card {
+        padding: 18px;
+    }
+
+    .donut-layout {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    .topbar {
+        min-height: 68px;
+    }
+
+    .brand-mark {
+        width: 38px;
+        height: 38px;
+    }
+
+    .brand strong {
+        font-size: 18px;
+    }
+
+    .brand small {
+        font-size: 8px;
+    }
+
+    .topbar-right {
+        font-size: 10px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        margin-top: 20px;
+        padding: 29px 23px;
+        grid-template-columns: 1fr;
+        border-radius: 18px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-art {
+        min-height: 210px;
+        margin-top: 2px;
+        transform: none;
+    }
+
+    .art-card {
+        width: 245px;
+    }
+
+    .floating-badge {
+        right: 0;
+        bottom: 2px;
+    }
+
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .overview-card {
+        padding: 17px;
+    }
+
+    .section-heading,
+    .history-heading {
+        align-items: flex-start;
+    }
+
+    .section-heading h2,
+    .history-heading h2 {
+        font-size: 23px;
+    }
+
+    .field-count {
+        font-size: 9px;
+    }
+
+    .form-card {
+        padding: 21px 17px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .form-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    #submitButton {
+        width: 100%;
+    }
+
+    .result-card {
+        padding: 20px 16px;
+    }
+
+    .result-heading h2 {
+        font-size: 20px;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-row {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 19px;
+    }
+
+    .stat-card > strong {
+        font-size: 30px;
+    }
+
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-card {
+        padding: 20px 16px;
+    }
+
+    .donut-layout {
+        gap: 25px;
+    }
+
+    .history-heading {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .secondary-button {
+        width: fit-content;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 7px;
+    }
+}
+
+@media (max-width: 380px) {
+    .topbar {
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    .topbar-right {
+        gap: 5px;
+        font-size: 9px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .section-heading h2,
+    .history-heading h2 {
+        font-size: 21px;
+    }
+
+    .field-count {
+        display: none;
+    }
+
+    .donut-layout {
+        flex-direction: column;
+    }
+
+    .chart-legend {
+        width: 100%;
+    }
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.download-pdf-button {
+    background: #166534;
+    color: white;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.download-pdf-button:hover {
+    background: #14532d;
+}
+
+.download-pdf-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* =========================================
+   HISTORY SEARCH AND FILTERS
+========================================= */
+
+.history-filters {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(150px, 200px) minmax(150px, 180px);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.history-filters input,
+.history-filters select {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    border: 1px solid #dce5dd;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #183328;
+    font: inherit;
+    outline: none;
+}
+
+.history-filters input:focus,
+.history-filters select:focus {
+    border-color: #32a66a;
+    box-shadow: 0 0 0 3px rgba(50, 166, 106, 0.12);
+}
+
+@media (max-width: 700px) {
+    .history-filters {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   RISK FACTORS AND RECOMMENDATIONS
+========================================= */
+
+.risk-factors-section {
+    margin-top: 28px;
+    padding: 24px;
+    border: 1px solid #dce9df;
+    border-radius: 16px;
+    background: #f8fbf8;
+}
+
+.risk-factors-heading {
+    margin-bottom: 20px;
+}
+
+.risk-factors-heading h3 {
+    margin: 8px 0;
+    color: #183328;
+    font-size: 21px;
+}
+
+.risk-factors-heading p {
+    margin: 0;
+    color: #6b7d72;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.risk-factors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.risk-factors-card,
+.risk-recommendations-card {
+    padding: 20px;
+    border: 1px solid #e1eae3;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.risk-factors-card h4,
+.risk-recommendations-card h4 {
+    margin: 0 0 14px;
+    color: #183328;
+    font-size: 16px;
+}
+
+.risk-factors-card ul,
+.risk-recommendations-card ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.risk-factors-card li,
+.risk-recommendations-card li {
+    margin-bottom: 12px;
+    color: #53665a;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.risk-factors-card li::marker {
+    color: #d18a37;
+}
+
+.risk-recommendations-card li::marker {
+    color: #32a66a;
+}
+
+.risk-factors-disclaimer {
+    margin: 18px 0 0;
+    color: #77857b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+    .risk-factors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .risk-factors-section {
+        padding: 16px;
+    }
+}
+/* =========================================
+   CREDAI — MODEL PERFORMANCE DASHBOARD
+========================================= */
+
+.model-performance-section {
+    margin-top: 45px;
+}
+
+.model-performance-card {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.model-performance-header {
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.model-performance-header h3 {
+    font-size: 17px;
+    color: var(--green-dark);
+}
+
+.model-performance-header p {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.evaluation-status {
+    padding: 7px 11px;
+    border-radius: 20px;
+    background: var(--green-light);
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+/* PERFORMANCE METRICS */
+
+.performance-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.performance-metric {
+    padding: 19px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fafcf9;
+}
+
+.performance-metric span {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.performance-metric strong {
+    display: block;
+    margin-top: 8px;
+    color: var(--green-dark);
+    font-size: 27px;
+    letter-spacing: -0.7px;
+    overflow-wrap: anywhere;
+}
+
+.performance-metric small {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* CONFUSION MATRIX */
+
+.confusion-section {
+    margin-top: 28px;
+    padding-top: 23px;
+    border-top: 1px solid var(--border);
+}
+
+.confusion-section h3 {
+    margin-bottom: 7px;
+    color: var(--green-dark);
+    font-size: 16px;
+}
+
+.confusion-section > p {
+    margin-bottom: 17px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.confusion-matrix {
+    width: 100%;
+    min-width: 0;
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.confusion-matrix th,
+.confusion-matrix td {
+    padding: 15px 10px;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    white-space: normal;
+}
+
+.confusion-matrix th {
+    background: #f3f8f3;
+    color: var(--green-dark);
+    font-weight: 800;
+}
+
+.confusion-matrix td {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.confusion-matrix .correct-result {
+    background: #e8f6ec;
+    color: var(--green);
+}
+
+.confusion-matrix .incorrect-result {
+    background: #fff0ef;
+    color: var(--red);
+}
+
+.matrix-explanation {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 10px;
+    background: #f5f8f5;
+    color: #526157;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* RESPONSIVE MODEL DASHBOARD */
+
+@media (max-width: 700px) {
+    .performance-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .model-performance-card {
+        padding: 18px 14px;
+    }
+
+    .model-performance-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .performance-metric {
+        padding: 15px;
+    }
+
+    .performance-metric strong {
+        font-size: 23px;
+    }
+
+    .confusion-matrix th,
+    .confusion-matrix td {
+        padding: 10px 5px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .performance-metrics {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   MODEL EXPLAINABILITY DASHBOARD
+========================================= */
+
+.explainability-section {
+    margin-top: 45px;
+}
+
+.explainability-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 26px;
+    margin-top: 20px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.explainability-card .chart-heading {
+    margin-bottom: 25px;
+}
+
+.feature-importance-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    margin-top: 20px;
+}
+
+.feature-row {
+    display: grid;
+    grid-template-columns: minmax(130px, 190px) 1fr 65px;
+    align-items: center;
+    gap: 16px;
+}
+
+.feature-name {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.feature-bar-track {
+    width: 100%;
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.feature-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #166534, #4ade80);
+    border-radius: 20px;
+    transition: width 0.8s ease;
+}
+
+.feature-value {
+    color: #166534;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.explainability-message {
+    margin-top: 20px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.explainability-disclaimer {
+    margin-top: 14px;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Loading and error messages */
+
+.feature-chart-message {
+    padding: 25px;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 650px) {
+
+    .explainability-card {
+        padding: 17px;
+    }
+
+    .feature-row {
+        grid-template-columns: 1fr 55px;
+        gap: 8px;
+    }
+
+    .feature-name {
+        grid-column: 1 / -1;
+    }
+
+    .feature-bar-track {
+        grid-column: 1;
+    }
+
+    .feature-value {
+        grid-column: 2;
+    }
+}
+/* =========================================
+   INDIVIDUAL PREDICTION EXPLANATION
+========================================= */
+
+.explanation-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.explanation-factor {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: #fafcf9;
+}
+
+.explanation-factor h3 {
+    margin-bottom: 14px;
+    font-size: 15px;
+    color: var(--green-dark);
+}
+
+.explanation-factor ul {
+    padding-left: 20px;
+}
+
+.explanation-factor li {
+    margin-bottom: 10px;
+    color: #53665a;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.risk-factor li::marker {
+    color: var(--red);
+}
+
+.positive-factor li::marker {
+    color: var(--green-bright);
+}
+
+#explanationSummary {
+    color: #53665a;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.explainability-disclaimer {
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+@media (max-width: 650px) {
+    .explanation-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .explanation-factor {
+        padding: 16px;
+    }
+}/* =========================================
+   INDIVIDUAL PREDICTION EXPLANATION
+========================================= */
+
+.explanation-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.explanation-factor {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: #fafcf9;
+}
+
+.explanation-factor h3 {
+    margin-bottom: 14px;
+    font-size: 15px;
+    color: var(--green-dark);
+}
+
+.explanation-factor ul {
+    padding-left: 20px;
+}
+
+.explanation-factor li {
+    margin-bottom: 10px;
+    color: #53665a;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.risk-factor li::marker {
+    color: var(--red);
+}
+
+.positive-factor li::marker {
+    color: var(--green-bright);
+}
+
+#explanationSummary {
+    color: #53665a;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.explainability-disclaimer {
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+@media (max-width: 650px) {
+    .explanation-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .explanation-factor {
+        padding: 16px;
+    }
+}
+/* INDIVIDUAL PREDICTION EXPLANATION */
+
+.explainability-section {
+    margin-top: 30px;
+}
+
+.explainability-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.explainability-card > h3 {
+    margin-bottom: 12px;
+    color: #1f2937;
+}
+
+#explanationSummary {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.explanation-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.explanation-factor {
+    padding: 20px;
+    border-radius: 12px;
+    background: #f9fafb;
+}
+
+.explanation-factor h3 {
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+.explanation-factor ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.explanation-factor li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #4b5563;
+}
+
+.risk-factor {
+    border-left: 4px solid #ef4444;
+}
+
+.risk-factor h3 {
+    color: #dc2626;
+}
+
+.positive-factor {
+    border-left: 4px solid #16a34a;
+}
+
+.positive-factor h3 {
+    color: #15803d;
+}
+
+.explainability-disclaimer {
+    margin-top: 20px;
+    padding: 12px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+    .explanation-columns {
+        grid-template-columns: 1fr;
+    }
+}
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 6%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5ebe6;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #087a4b;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #344b40;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #087a4b;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#home,
+#history {
+    scroll-margin-top: 85px;
+}
+.logout-btn {
+    background: #087a4b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #065c39;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+/* ABOUT AND CONTACT SECTIONS */
+
+.info-section {
+    padding: 50px 6%;
+    scroll-margin-top: 85px;
+}
+
+.info-card {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5ebe6;
+}
+
+.info-card h2 {
+    color: #087a4b;
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    color: #087a4b;
+    margin-top: 25px;
+}
+
+.info-card p,
+.info-card li {
+    color: #52635a;
+    line-height: 1.8;
+}
+
+.info-card ul {
+    padding-left: 25px;
+}
+/* ===== CRED AI ABOUT & CONTACT ===== */
+
+.credai-info-section {
+    padding: 65px 7%;
+    background: #f4f7f4;
+    scroll-margin-top: 85px;
+}
+
+.credai-info-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.info-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.info-label {
+    color: #087a4b;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.credai-info-section h2 {
+    font-size: 32px;
+    color: #172c22;
+    margin: 12px 0;
+}
+
+.credai-info-section h2 span {
+    color: #087a4b;
+}
+
+.info-heading > p,
+.contact-container > p {
+    color: #68776e;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.about-content {
+    background: #ffffff;
+    padding: 35px;
+    border: 1px solid #e4ebe5;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(20, 60, 35, 0.04);
+}
+
+.about-content h3 {
+    color: #087a4b;
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.about-content > p {
+    color: #647269;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+.objective-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.objective-item {
+    background: #f2f8f4;
+    border: 1px solid #e0eee4;
+    padding: 18px;
+    border-radius: 10px;
+    color: #28563d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.contact-section {
+    background: #ffffff;
+    text-align: center;
+}
+
+.contact-container > p {
+    margin: 15px auto 30px;
+}
+
+.contact-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.contact-details > div {
+    background: #f4f8f5;
+    padding: 25px 15px;
+    border: 1px solid #e4ebe5;
+    border-radius: 12px;
+}
+
+.contact-details strong {
+    color: #087a4b;
+    font-size: 15px;
+}
+
+.contact-details p {
+    color: #647269;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+    .objective-grid,
+    .contact-details {
+        grid-template-columns: 1fr;
+    }
+
+    .credai-info-section {
+        padding: 40px 5%;
+    }
+
+    .about-content {
+        padding: 22px;
+    }
+}
+
+/* =========================================
+   CREDAI — PREMIUM FINTECH DESIGN
+   Visual refinement layer
+========================================= */
+
+:root {
+    --bg: #f2f5f7;
+    --surface: #ffffff;
+    --green-dark: #102d2a;
+    --green: #087f68;
+    --green-light: #e1f2ec;
+    --green-bright: #35b58a;
+    --text: #172b35;
+    --muted: #71818a;
+    --border: #e3e9eb;
+    --shadow: 0 12px 35px rgba(20, 45, 55, 0.07);
+}
+
+/* PAGE BACKGROUND */
+
+body {
+    background:
+        radial-gradient(ellipse at 10% 15%, rgba(53, 181, 138, 0.07), transparent 30%),
+        radial-gradient(ellipse at 90% 60%, rgba(35, 106, 143, 0.06), transparent 32%),
+        #f2f5f7;
+    color: var(--text);
+}
+
+/* NAVIGATION */
+
+.navbar {
+    min-height: 78px;
+    padding: 15px 7%;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid #e5ebed;
+    box-shadow: 0 5px 20px rgba(20, 45, 55, 0.035);
+}
+
+.nav-logo {
+    color: #087f68;
+    font-size: 27px;
+    font-weight: 850;
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    align-items: center;
+    gap: 29px;
+}
+
+.nav-link {
+    color: #40545c;
+    font-size: 13px;
+    font-weight: 650;
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+.nav-link:hover {
+    color: #087f68;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    border-radius: 5px;
+    background: #35b58a;
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.logout-btn {
+    padding: 11px 20px;
+    border-radius: 9px;
+    background: #102d2a;
+    color: white;
+    font-size: 12px;
+    transition: 0.25s;
+}
+
+.logout-btn:hover {
+    background: #087f68;
+    transform: translateY(-2px);
+}
+
+/* HERO SECTION */
+
+.hero {
+    background:
+        radial-gradient(circle at 85% 20%, rgba(53, 181, 138, 0.22), transparent 30%),
+        linear-gradient(125deg, #102d2a, #153d3a 65%, #164f49);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px rgba(16, 45, 42, 0.16);
+}
+
+.hero h1 {
+    letter-spacing: -2.3px;
+}
+
+.hero .eyebrow {
+    color: #83e0bc;
+}
+
+.hero h1 span {
+    color: #83e0bc;
+}
+
+.hero-quote {
+    margin-top: 22px;
+    padding-left: 13px;
+    border-left: 2px solid #66d5aa;
+    color: #c5e5d9;
+    font-size: 13px;
+    font-style: italic;
+    letter-spacing: 0.2px;
+}
+
+/* HERO ART */
+
+.art-card {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.11);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+.orbit {
+    border-color: rgba(131, 224, 188, 0.23);
+}
+
+/* DASHBOARD CARDS */
+
+.overview-card,
+.stat-card,
+.chart-card,
+.form-card,
+.result-card,
+.model-performance-card,
+.explainability-card {
+    border: 1px solid #e3e9eb;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 10px 30px rgba(20, 45, 55, 0.045);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.overview-card:hover,
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(20, 45, 55, 0.08);
+}
+
+.overview-icon,
+.section-number {
+    background: #e1f2ec;
+    color: #087f68;
+}
+
+/* SECTION HEADINGS */
+
+.section-heading h2,
+.history-heading h2 {
+    color: #172b35;
+    letter-spacing: -0.9px;
+}
+
+.eyebrow,
+.info-label {
+    color: #087f68;
+}
+
+/* FORM ELEMENTS */
+
+.form-grid input,
+.form-grid select,
+.history-filters input,
+.history-filters select {
+    border-color: #dce5e7;
+    background: #fbfcfc;
+    border-radius: 10px;
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.history-filters input:focus,
+.history-filters select:focus {
+    border-color: #35b58a;
+    box-shadow: 0 0 0 4px rgba(53, 181, 138, 0.1);
+}
+
+#submitButton {
+    background: #087f68;
+    border-radius: 10px;
+}
+
+#submitButton:hover:not(:disabled) {
+    background: #102d2a;
+}
+
+/* RISK COLORS */
+
+.risk-badge.low-risk,
+.risk-label.low-risk {
+    background: #e1f2ec;
+    color: #087f68;
+}
+
+.risk-badge.high-risk,
+.risk-label.high-risk {
+    background: #fff0ed;
+    color: #d64f50;
+}
+
+.low-stat {
+    border-top-color: #35b58a;
+}
+
+.low-stat > strong {
+    color: #087f68;
+}
+
+.high-stat {
+    border-top-color: #d64f50;
+}
+
+/* CHARTS */
+
+.risk-donut {
+    background: conic-gradient(
+        #35b58a 0% 100%,
+        #d64f50 100% 100%
+    );
+}
+
+.activity-bar {
+    background: linear-gradient(180deg, #67d7ae, #087f68);
+}
+
+.feature-bar {
+    background: linear-gradient(90deg, #087f68, #67d7ae);
+}
+
+/* HISTORY TABLE */
+
+thead {
+    background: #f3f7f6;
+}
+
+th {
+    color: #52666e;
+}
+
+tbody tr:hover {
+    background: #f5faf8;
+}
+
+/* ABOUT SECTION */
+
+.credai-info-section {
+    padding: 85px 7%;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(53, 181, 138, 0.08), transparent 28%),
+        #f2f5f7;
+}
+
+.credai-info-container {
+    max-width: 1080px;
+}
+
+.info-heading {
+    margin-bottom: 35px;
+}
+
+.credai-info-section h2 {
+    font-size: clamp(30px, 4vw, 40px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.credai-info-section h2 span {
+    color: #087f68;
+}
+
+.info-heading > p,
+.contact-container > p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #71818a;
+    font-size: 15px;
+}
+
+.about-content {
+    padding: 42px;
+    background: white;
+    border: 1px solid #e3e9eb;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(20, 45, 55, 0.05);
+}
+
+.about-content h3 {
+    color: #102d2a;
+    font-size: 19px;
+    font-weight: 750;
+}
+
+.about-content > p {
+    color: #687a82;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.objective-grid {
+    gap: 16px;
+}
+
+.objective-item {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    background: #f2f8f6;
+    border: 1px solid #e1eee8;
+    border-radius: 12px;
+    color: #315d50;
+    font-size: 13px;
+    transition: 0.25s;
+}
+
+.objective-item:hover {
+    background: #e4f4ed;
+    transform: translateY(-3px);
+}
+
+/* CONTACT SECTION */
+
+.contact-section {
+    background:
+        radial-gradient(circle at 85% 20%, rgba(53, 181, 138, 0.09), transparent 30%),
+        #ffffff;
+}
+
+.contact-container {
+    text-align: center;
+}
+
+.contact-details {
+    gap: 20px;
+}
+
+.contact-details > div {
+    padding: 30px 18px;
+    background: #f4f8f7;
+    border: 1px solid #e3ebea;
+    border-radius: 15px;
+    transition: 0.25s;
+}
+
+.contact-details > div:hover {
+    transform: translateY(-4px);
+    border-color: #9ed9c3;
+    box-shadow: 0 10px 25px rgba(20, 80, 60, 0.06);
+}
+
+.contact-details strong {
+    color: #087f68;
+    font-size: 14px;
+}
+
+.contact-details p {
+    color: #687a82;
+    line-height: 1.7;
+}
+
+/* DISCLAIMER */
+
+.disclaimer {
+    background: #fffdf5;
+    border-color: #eee6c9;
+    border-radius: 12px;
+}
+
+/* FOOTER */
+
+.footer {
+    padding: 25px 7%;
+    background: #102d2a;
+    border-top: none;
+    color: #b9cbc5;
+}
+
+.footer span:first-child {
+    color: #83e0bc;
+}
+
+/* SCROLL POSITION */
+
+#home,
+#history,
+#about,
+#contact {
+    scroll-margin-top: 95px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .credai-info-section {
+        padding: 50px 5%;
+    }
+
+    .about-content {
+        padding: 24px;
+    }
+
+    .hero-quote {
+        font-size: 12px;
+    }
+}
+
+/* =================================
+   CREDAI INFORMATION SECTIONS
+================================= */
+
+.info-section {
+    padding: 65px 7%;
+    margin: 35px auto;
+    max-width: 1400px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-tag {
+    display: inline-block;
+    color: #087f68;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    color: #102d2a;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: #738077;
+    font-size: 15px;
+}
+
+/* HOW CREDAI WORKS */
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+}
+
+.process-card {
+    background: #ffffff;
+    padding: 25px;
+    border: 1px solid #e2ebe6;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(16, 45, 42, 0.05);
+    transition: transform 0.25s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-5px);
+}
+
+.process-number {
+    display: inline-block;
+    color: #087f68;
+    background: #e3f5ed;
+    padding: 9px 13px;
+    border-radius: 9px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.process-card h3 {
+    color: #102d2a;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.process-card p {
+    color: #738077;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* DATASET OVERVIEW */
+
+.dataset-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.dataset-stat {
+    background: #102d2a;
+    color: #ffffff;
+    padding: 25px 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.dataset-stat h3 {
+    font-size: 27px;
+    color: #55d6a5;
+    margin-bottom: 5px;
+}
+
+.dataset-stat p {
+    color: #e0eee8;
+    font-size: 13px;
+}
+
+.dataset-content {
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid #e2ebe6;
+    border-radius: 18px;
+}
+
+.dataset-content > h3 {
+    color: #102d2a;
+    margin-bottom: 20px;
+}
+
+.attribute-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.attribute-item {
+    background: #f2f7f4;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.attribute-item h4 {
+    color: #087f68;
+    margin-bottom: 8px;
+}
+
+.attribute-item p {
+    color: #65756b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.target-info {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f7faf8;
+    border-radius: 14px;
+}
+
+.target-info h3 {
+    color: #102d2a;
+    margin-bottom: 20px;
+}
+
+.target-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.target-values > div {
+    text-align: center;
+}
+
+.target-zero,
+.target-one {
+    display: inline-flex;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #ffffff;
+    font-weight: 800;
+    background: #087f68;
+}
+
+.target-one {
+    background: #d84b4b;
+}
+
+.target-values p {
+    margin-top: 8px;
+    color: #53645a;
+}
+
+.target-note {
+    color: #738077;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+/* MACHINE LEARNING MODEL */
+
+.model-card {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px;
+    background: linear-gradient(135deg, #102d2a, #176b57);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(16, 45, 42, 0.15);
+}
+
+.model-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    background: #35b58a;
+    color: #102d2a;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.model-card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.model-card > p {
+    color: #e0eee8;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+.model-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.model-details > div {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 17px;
+    border-radius: 12px;
+}
+
+.model-details strong,
+.model-details span {
+    display: block;
+}
+
+.model-details strong {
+    color: #70e0b4;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.model-details span {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+    .info-section {
+        padding: 40px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 24px;
+    }
+
+    .dataset-content,
+    .model-card {
+        padding: 20px;
+    }
+
+    .target-values {
+        gap: 20px;
+    }
+}
+
+
+/* =========================================
+   CREDAI — LAYOUT ALIGNMENT FIX
+========================================= */
+
+/* Consistent page background */
+body {
+    background:
+        radial-gradient(
+            ellipse at 10% 15%,
+            rgba(53, 181, 138, 0.07),
+            transparent 30%
+        ),
+        #f2f5f7;
+}
+
+/* Consistent main content width */
+.container {
+    width: min(1180px, 90%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Consistent section spacing */
+.info-section {
+    width: 100%;
+    max-width: 1180px;
+    margin: 55px auto;
+    padding: 0 25px;
+    scroll-margin-top: 100px;
+}
+
+/* Correct centered headings */
+.info-section .section-heading {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 35px;
+}
+
+.info-section .section-heading h2 {
+    margin: 8px 0 10px;
+    text-align: center;
+}
+
+.info-section .section-heading p {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Consistent cards */
+.process-card,
+.dataset-content,
+.model-card,
+.about-content {
+    border-radius: 18px;
+}
+
+/* Consistent grid spacing */
+.process-grid,
+.dataset-stats,
+.attribute-grid,
+.model-details {
+    width: 100%;
+    align-items: stretch;
+}
+
+/* Prevent oversized About section */
+.credai-info-section {
+    width: 100%;
+    padding: 65px 5%;
+}
+
+/* Consistent section separation */
+.history-section,
+.model-performance-section,
+.explainability-section {
+    margin-top: 45px;
+}
+
+/* Navigation alignment */
+.navbar {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+    .container {
+        width: 94%;
+    }
+
+    .info-section {
+        margin: 35px auto;
+        padding: 0 15px;
+    }
+
+    .info-section .section-heading h2 {
+        font-size: 24px;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+}
+/* =================================
+   CREDAl FINAL LAYOUT CORRECTIONS
+================================= */
+
+.container {
+    width: min(1180px, 90%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.credai-info-section {
+    width: 100%;
+    padding: 65px 5%;
+    margin: 0 auto;
+}
+
+.credai-info-container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.info-heading,
+.contact-container {
+    text-align: center;
+}
+
+.about-content {
+    margin-top: 30px;
+}
+
+.objective-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.contact-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.history-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.model-performance-section,
+.explainability-section,
+.history-section {
+    margin-top: 45px;
+}
+
+.footer {
+    margin-top: 50px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 700px) {
+    .container {
+        width: 92%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading,
+    .history-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .objective-grid,
+    .contact-details {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid,
+    .performance-grid,
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ABOUT AND CONTACT SECTIONS */
+
+.credai-info-section {
+    padding: 55px 5%;
+    margin: 35px auto;
+}
+
+.credai-info-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.credai-info-section h2 {
+    font-size: 30px;
+    margin: 10px 0 18px;
+}
+
+.credai-info-section h2 span {
+    color: var(--green);
+}
+
+.about-description {
+    max-width: 750px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.credai-info-section h3 {
+    margin-bottom: 18px;
+}
+
+.objective-grid,
+.contact-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.objective-item,
+.contact-details > div {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.objective-item strong {
+    color: var(--green);
+    margin-right: 8px;
+}
+
+.contact-details {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 25px;
+}
+
+.contact-details p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+    .objective-grid,
+    .contact-details {
+        grid-template-columns: 1fr;
+    }
+}
+.feature-bar-track {
+    height: 14px;
+    background: #edf4ef;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.feature-bar {
+    height: 100%;
+    border-radius: 0;
+    background: #16834b;
+    transition: width 0.8s ease;
+}/* MODEL PERFORMANCE - WHITE DESIGN */
+
+.model-performance-section {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e5ebe7;
+}
+
+.performance-card {
+    background: #ffffff;
+    border: 1px solid #e1e7e3;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+    padding: 24px;
+}
+
+.performance-card strong {
+    color: #176b45;
+}
+
+.performance-card span,
+.performance-card small {
+    color: #526158;
+}
+
+#evaluationStatus {
+    background: #e7f6eb;
+    color: #176b45;
+    border: 1px solid #bce5c8;
+}
+
+/* MODEL PERFORMANCE ICONS */
+
+.performance-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e1e9e4;
+    border-radius: 14px;
+    padding: 25px 25px 25px 85px;
+    min-height: 150px;
+    box-shadow: 0 4px 14px rgba(20, 70, 40, 0.05);
+}
+
+.performance-card::before {
+    position: absolute;
+    left: 22px;
+    top: 28px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e8f6ed;
+    color: #147344;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+/* Individual metric icons */
+
+.performance-card:nth-child(1)::before {
+    content: "◎";
+}
+
+.performance-card:nth-child(2)::before {
+    content: "✓";
+}
+
+.performance-card:nth-child(3)::before {
+    content: "⌕";
+}
+
+.performance-card:nth-child(4)::before {
+    content: "⚖";
+}
+
+.performance-card:nth-child(5)::before {
+    content: "↗";
+}
+
+.performance-card:nth-child(6)::before {
+    content: "⚙";
+}
+
+.performance-card strong {
+    display: block;
+    color: #176b45;
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.performance-card span {
+    font-weight: 700;
+    color: #18251e;
+}
+
+.performance-card small {
+    color: #65746b;
+    line-height: 1.5;
+}
+/* Reduce spacing between performance cards */
+
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.performance-card {
+    padding: 18px 18px 18px 75px;
+    min-height: 125px;
+}
+
+.performance-card::before {
+    left: 15px;
+    top: 22px;
+}
+/* Align Model Explainability to the left */
+
+.explainability-section .section-heading {
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.explainability-section .section-heading > div {
+    margin-left: 0;
+    text-align: left;
+}
+
+.explainability-section .section-heading h2,
+.explainability-section .section-heading p {
+    text-align: left;
+}
+
+/* MODEL EXPLAINABILITY - WHITE BACKGROUND */
+
+.explainability-section {
+    background: #ffffff;
+    padding: 30px;
+    margin-top: 30px;
+    border: 1px solid #e1e9e4;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(20, 70, 40, 0.04);
+}
+
+/* Heading alignment */
+.explainability-section .section-heading {
+    background: #ffffff;
+    justify-content: space-between;
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.explainability-section .section-heading h2 {
+    color: #18251e;
+    margin-bottom: 8px;
+}
+
+.explainability-section .section-heading p {
+    color: #65746b;
+}
+
+/* Feature importance chart card */
+.explainability-card {
+    background: #ffffff;
+    border: 1px solid #e1e9e4;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+}
+
+.explainability-card h3 {
+    color: #18251e;
+}
+
+.explainability-disclaimer {
+    color: #65746b;
+    margin-top: 18px;
+}
+
+/* BORROWER PROFILE - WHITE DESIGN */
+
+#borrowerForm {
+    background: #ffffff;
+    padding: 25px 30px;
+    margin: 30px 0 0;
+    border: 1px solid #e1e9e4;
+    border-radius: 14px 14px 0 0;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+#borrowerForm > div {
+    text-align: left;
+}
+
+#borrowerForm h2,
+#borrowerForm p {
+    text-align: left;
+}
+
+#borrowerForm .field-count {
+    margin-left: auto;
+}
+
+.form-card {
+    background: #ffffff;
+    border: 1px solid #e1e9e4;
+    border-top: 0;
+    border-radius: 0 0 14px 14px;
+    padding: 30px;
+    box-shadow: 0 4px 14px rgba(20, 70, 40, 0.04);
+}
+/* Move navbar links to the right */
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-logo {
+    margin-right: auto;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
+    margin-left: auto;
+}
+
+/* CRED AI NAVBAR - ADJUSTED LAYOUT */
+
+.navbar {
+    width: 100%;
+    min-height: 76px;
+    padding: 12px 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5ebe7;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #176b45;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-right: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(8px, 1.3vw, 18px);
+    margin-left: auto;
+    flex-wrap: nowrap;
+}
+
+.nav-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: #263b30;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #16834b;
+}
+
+.logout-btn {
+    padding: 9px 17px;
+    border: none;
+    border-radius: 7px;
+    background: #176b45;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Smaller screens */
+@media (max-width: 950px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-logo {
+        margin-right: 0;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 16px;
+    }
+}
+
+/* =================================
+   PREVIOUS ASSESSMENTS - WHITE THEME
+================================= */
+
+#history {
+    background: #ffffff !important;
+    color: #1f2937;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    margin: 25px 0;
+}
+
+/* Section heading */
+#history h2,
+#history h3 {
+    color: #14532d;
+    font-weight: 700;
+}
+
+/* Description */
+#history p {
+    color: #475569;
+}
+
+/* History table */
+#history table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table heading */
+#history thead {
+    background: #eaf6ee;
+}
+
+#history th {
+    color: #14532d;
+    font-weight: 700;
+    padding: 16px 14px;
+    text-align: left;
+    border-bottom: 1px solid #dce9df;
+}
+
+/* Table rows */
+#history td {
+    color: #273444;
+    padding: 15px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #ffffff;
+}
+
+/* Hover effect */
+#history tbody tr:hover td {
+    background: #f4fbf6;
+}
+
+/* Last row */
+#history tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Low risk */
+#history .low-risk {
+    color: #15803d;
+    background: #dcfce7;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* High risk */
+#history .high-risk {
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Buttons inside history */
+#history button {
+    border: 1px solid #bbebce;
+    background: #f0fdf4;
+    color: #15803d;
+    padding: 9px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#history button:hover {
+    background: #dcfce7;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #history {
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    #history table {
+        min-width: 650px;
+    }
+}
+
+/* =====================================
+   CREDAI - CLEAN ANALYTICS GRAPHS
+===================================== */
+
+/* Analytics section */
+#analytics,
+.analytics-section {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+}
+
+/* Chart cards */
+.chart-card,
+.chart-container,
+.analytics-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.05);
+    min-width: 0;
+}
+
+/* Chart headings */
+.chart-card h3,
+.chart-container h3,
+.analytics-card h3 {
+    color: #14532d;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* Chart layout */
+.charts-grid,
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+/* Consistent chart dimensions */
+.chart-card canvas,
+.chart-container canvas,
+.analytics-card canvas {
+    display: block;
+    width: 100% !important;
+    max-height: 300px;
+}
+
+/* Feature importance bars */
+.feature-bar,
+.importance-bar {
+    border-radius: 3px !important;
+    height: 10px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .charts-grid,
+    .analytics-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .chart-card,
+    .chart-container,
+    .analytics-card {
+        padding: 16px;
+    }
+}
+
+/* =========================================
+   CREDAI - PREDICTION HISTORY GRAPH DESIGN
+========================================= */
+
+/* Graph layout */
+.history-section .analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 24px;
+    align-items: stretch;
+}
+
+/* Individual graph cards */
+.history-section .chart-card {
+    min-width: 0;
+    min-height: 320px;
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #e2ebe5;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(16, 45, 42, 0.045);
+}
+
+/* Graph headings */
+.history-section .chart-heading {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.history-section .chart-heading h3 {
+    color: #183328;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.history-section .chart-heading p {
+    color: #829087;
+    font-size: 12px;
+}
+
+/* DONUT GRAPH */
+.history-section .donut-layout {
+    min-height: 245px;
+    padding: 25px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.history-section .risk-donut {
+    width: 175px;
+    height: 175px;
+    flex-shrink: 0;
+    border: 1px solid #edf1ee;
+    border-radius: 50%;
+}
+
+.history-section .risk-donut::before {
+    width: 120px;
+    height: 120px;
+    background: #ffffff;
+}
+
+.history-section .donut-hole strong {
+    color: #183328;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.history-section .donut-hole span {
+    color: #829087;
+    font-size: 11px;
+}
+
+/* DONUT LEGEND */
+.history-section .chart-legend {
+    min-width: 125px;
+    gap: 19px;
+}
+
+.history-section .chart-legend > div {
+    grid-template-columns: 11px 1fr auto;
+    gap: 9px;
+    font-size: 12px;
+}
+
+.history-section .chart-legend strong {
+    color: #183328;
+    font-size: 14px;
+}
+
+.history-section .low-dot {
+    background: #20a66a;
+}
+
+.history-section .high-dot {
+    background: #e05252;
+}
+
+/* ACTIVITY BAR GRAPH */
+.history-section .activity-chart {
+    min-height: 220px;
+    margin-top: 25px;
+    padding: 12px 8px 0;
+    gap: 15px;
+    border-bottom: 1px solid #dce5df;
+}
+
+.history-section .activity-column {
+    gap: 9px;
+}
+
+.history-section .activity-value {
+    color: #40564a;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.history-section .activity-bar-track {
+    width: 100%;
+    max-width: 38px;
+    height: 145px;
+}
+
+.history-section .activity-bar {
+    border-radius: 4px 4px 0 0;
+    background: linear-gradient(
+        180deg,
+        #59ca91,
+        #087f55
+    );
+    transition: height 0.4s ease;
+}
+
+.history-section .activity-date {
+    color: #75847a;
+    font-size: 10px;
+}
+
+/* Graph background grid */
+.history-section .activity-chart {
+    background-image: linear-gradient(
+        to bottom,
+        transparent 24.5%,
+        #edf2ee 25%,
+        transparent 25.5%,
+        transparent 49.5%,
+        #edf2ee 50%,
+        transparent 50.5%,
+        transparent 74.5%,
+        #edf2ee 75%,
+        transparent 75.5%
+    );
+}
+
+/* Empty graph message */
+.history-section .chart-empty {
+    color: #829087;
+    font-size: 12px;
+    padding: 12px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .history-section .analytics-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .history-section .chart-card {
+        min-height: auto;
+        padding: 20px 15px;
+    }
+
+    .history-section .donut-layout {
+        gap: 22px;
+    }
+}
+
+@media (max-width: 400px) {
+    .history-section .donut-layout {
+        flex-direction: column;
+    }
+}
+
+/* =========================================
+   PREDICTION HISTORY - SHARP BAR GRAPH
+========================================= */
+
+/* Remove dashed and dotted graph lines */
+.history-section .activity-chart {
+    background-image: none !important;
+    border-bottom: 1px solid #dce5df;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+/* Sharp rectangular bars */
+.history-section .activity-bar {
+    border-radius: 0 !important;
+    background: #16834b !important;
+    box-shadow: none !important;
+}
+
+/* Bar containers */
+.history-section .activity-bar-track {
+    border-radius: 0 !important;
+    background: transparent;
+}
+
+/* Clean graph spacing */
+.history-section .activity-column {
+    gap: 9px;
+}
+
+/* Clear labels */
+.history-section .activity-value {
+    color: #263b30;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.history-section .activity-date {
+    color: #64746a;
+    font-size: 10px;
+}
+
+/* Sharp donut chart edges */
+.history-section .risk-donut {
+    border-radius: 50%;
+}
+
+/* No rounded corners on chart cards */
+.history-section .chart-card {
+    border-radius: 10px;
+}
+
+/* =========================================
+   CREDAI CSV UPLOAD DESIGN
+========================================= */
+
+.csv-upload-zone {
+    border: 2px dashed #a8cbb5;
+    background: #f7fbf8;
+    border-radius: 14px;
+    padding: 35px 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.csv-upload-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.csv-upload-zone h3 {
+    color: #174c30;
+    margin-bottom: 8px;
+}
+
+.csv-upload-zone p {
+    color: #64746a;
+    margin-bottom: 16px;
+}
+
+#csvFile {
+    display: none;
+}
+
+.csv-select-button {
+    display: inline-block;
+    padding: 11px 22px;
+    background: #16834b;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.csv-select-button:hover {
+    background: #11683b;
+}
+
+.csv-file-name {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #456451;
+}
+
+.csv-instructions {
+    background: #f7faf8;
+    padding: 18px 22px;
+    border-radius: 10px;
+    margin: 18px 0;
+}
+
+.csv-instructions h4 {
+    color: #174c30;
+    margin-bottom: 10px;
+}
+
+.csv-instructions ul {
+    padding-left: 20px;
+    color: #56665c;
+    line-height: 1.9;
+}
+
+.csv-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+#csvResultsSection {
+    margin-top: 25px;
+}
+
+#csvResultsSection[hidden] {
+    display: none;
+}
+
+#csvResultsSection .table-wrap {
+    overflow-x: auto;
+}
+
+#csvResultsSection table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#csvResultsSection th,
+#csvResultsSection td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #e2eae4;
+}
+
+#csvResultsSection th {
+    background: #f4f8f5;
+    color: #244c34;
+}
+
+/* =========================================
+   CREDAI — EMERALD PREMIUM REDESIGN
+   Final visual theme
+========================================= */
+
+:root {
+    --bg: #f4f8f5;
+    --surface: #ffffff;
+    --green-dark: #073b2b;
+    --green: #087f55;
+    --green-light: #e5f5ec;
+    --green-bright: #35b879;
+    --text: #183328;
+    --muted: #718178;
+    --border: #e1ebe4;
+    --red: #d84b4b;
+    --red-light: #fff0ef;
+    --shadow: 0 10px 35px rgba(7, 59, 43, 0.055);
+}
+
+/* PAGE */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    background:
+        radial-gradient(circle at 5% 10%, rgba(53, 184, 121, 0.07), transparent 25%),
+        radial-gradient(circle at 95% 55%, rgba(8, 127, 85, 0.045), transparent 28%),
+        var(--bg);
+    color: var(--text);
+}
+
+.container {
+    width: min(1180px, 91%);
+}
+
+/* NAVIGATION */
+
+.navbar {
+    min-height: 76px;
+    padding: 13px 5%;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(7, 59, 43, 0.035);
+}
+
+.nav-logo {
+    color: var(--green);
+    font-size: 27px;
+    font-weight: 850;
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    gap: 22px;
+}
+
+.nav-link {
+    color: #40594b;
+    font-size: 13px;
+    font-weight: 650;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--green);
+}
+
+.logout-btn {
+    background: var(--green-dark);
+    border-radius: 9px;
+    padding: 10px 18px;
+    transition: 0.25s ease;
+}
+
+.logout-btn:hover {
+    background: var(--green);
+    transform: translateY(-2px);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 345px;
+    margin-top: 32px;
+    padding: 48px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 23px;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(75, 211, 143, 0.23), transparent 30%),
+        linear-gradient(125deg, #073b2b 0%, #10553b 60%, #087f55 100%);
+    box-shadow: 0 20px 48px rgba(7, 59, 43, 0.16);
+}
+
+.hero h1 {
+    font-size: clamp(36px, 4.5vw, 55px);
+    letter-spacing: -2.3px;
+}
+
+.hero h1 span,
+.hero .eyebrow {
+    color: #8ce7b5;
+}
+
+.hero-copy > p {
+    color: #c5ded0;
+    line-height: 1.8;
+}
+
+.hero-link {
+    background: #8ce7b5;
+    color: #073b2b;
+    border-radius: 9px;
+    padding: 12px 18px;
+}
+
+.hero-link:hover {
+    background: #b4f2ce;
+}
+
+.art-card {
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 18px;
+    background: rgba(255,255,255,0.11);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    backdrop-filter: blur(14px);
+}
+
+.orbit {
+    border-color: rgba(140,231,181,0.22);
+}
+
+.floating-badge {
+    background: #185b40;
+    color: #d5f5e1;
+    border-radius: 11px;
+}
+
+/* CARDS */
+
+.overview-card,
+.stat-card,
+.chart-card,
+.form-card,
+.result-card,
+.model-performance-card,
+.explainability-card,
+.process-card,
+.dataset-content,
+.about-content,
+.info-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    box-shadow: var(--shadow);
+}
+
+.overview-card,
+.stat-card,
+.process-card,
+.contact-details > div {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.overview-card:hover,
+.stat-card:hover,
+.process-card:hover,
+.contact-details > div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(7, 59, 43, 0.09);
+}
+
+.overview-icon,
+.section-number {
+    background: var(--green-light);
+    color: var(--green);
+}
+
+/* HEADINGS */
+
+.eyebrow,
+.info-label,
+.section-tag {
+    color: var(--green);
+}
+
+.section-heading h2,
+.history-heading h2 {
+    color: var(--green-dark);
+    letter-spacing: -0.9px;
+}
+
+/* FORMS */
+
+.form-card {
+    padding: 30px;
+}
+
+.form-grid input,
+.form-grid select,
+.history-filters input,
+.history-filters select {
+    border: 1px solid #dce8df;
+    border-radius: 10px;
+    background: #fbfdfb;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.history-filters input:focus,
+.history-filters select:focus {
+    border-color: var(--green-bright);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(53,184,121,0.12);
+}
+
+#submitButton {
+    background: var(--green);
+    border-radius: 10px;
+    min-height: 47px;
+    padding: 0 22px;
+    box-shadow: 0 5px 14px rgba(8,127,85,0.14);
+}
+
+#submitButton:hover:not(:disabled) {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+}
+
+/* CSV UPLOAD */
+
+.csv-upload-zone {
+    background: #f5fbf7;
+    border: 2px dashed #9bcdb0;
+    border-radius: 16px;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.csv-upload-zone:hover {
+    background: #edf8f1;
+    border-color: var(--green);
+}
+
+.csv-select-button {
+    background: var(--green);
+    border-radius: 9px;
+}
+
+.csv-select-button:hover {
+    background: var(--green-dark);
+}
+
+.csv-instructions {
+    background: #f5faf6;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+/* PREDICTION RESULTS */
+
+.result-card {
+    padding: 28px;
+}
+
+.risk-summary,
+.probability-panel,
+.explanation-factor {
+    background: #f8fbf8;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+}
+
+.risk-badge.low-risk,
+.risk-label.low-risk {
+    background: #e2f5e9;
+    color: #087f55;
+}
+
+.risk-badge.high-risk,
+.risk-label.high-risk {
+    background: var(--red-light);
+    color: var(--red);
+}
+
+.meter-fill {
+    background: linear-gradient(90deg, #087f55, #45c987);
+}
+
+.meter-fill.high-risk {
+    background: var(--red);
+}
+
+/* RISK FACTORS */
+
+.risk-factors-section {
+    background: #f4faf6;
+    border: 1px solid #dcebe1;
+    border-radius: 16px;
+}
+
+.risk-factors-card,
+.risk-recommendations-card {
+    border: 1px solid var(--border);
+    border-radius: 13px;
+}
+
+.risk-factors-card li::marker {
+    color: #d18a37;
+}
+
+.risk-recommendations-card li::marker {
+    color: var(--green-bright);
+}
+
+/* ANALYTICS */
+
+.stat-card {
+    border-top: 3px solid #dcebe1;
+}
+
+.low-stat {
+    border-top-color: var(--green-bright);
+}
+
+.low-stat > strong {
+    color: var(--green);
+}
+
+.high-stat {
+    border-top-color: var(--red);
+}
+
+.high-stat > strong {
+    color: var(--red);
+}
+
+.chart-card {
+    padding: 25px;
+}
+
+.chart-heading h3 {
+    color: var(--green-dark);
+}
+
+.risk-donut {
+    background: conic-gradient(
+        #35b879 0% 100%,
+        #d84b4b 100% 100%
+    );
+}
+
+.risk-donut::before {
+    background: white;
+}
+
+.low-dot {
+    background: #35b879;
+}
+
+.high-dot {
+    background: #d84b4b;
+}
+
+.activity-bar {
+    background: #16834f !important;
+    border-radius: 3px 3px 0 0;
+}
+
+/* HISTORY */
+
+#history {
+    background: white !important;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.table-wrap {
+    border: 1px solid var(--border);
+    border-radius: 13px;
+}
+
+thead,
+#history thead {
+    background: #edf7f0;
+}
+
+th,
+#history th {
+    color: #285b40;
+    font-weight: 800;
+}
+
+td,
+#history td {
+    border-top: 1px solid #edf2ee;
+}
+
+tbody tr:hover,
+#history tbody tr:hover td {
+    background: #f4faf6;
+}
+
+.secondary-button,
+.download-pdf-button {
+    border-radius: 9px;
+}
+
+.download-pdf-button {
+    background: var(--green);
+}
+
+.download-pdf-button:hover {
+    background: var(--green-dark);
+}
+
+/* MODEL PERFORMANCE */
+
+.model-performance-section {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    padding: 27px;
+}
+
+.model-performance-card {
+    box-shadow: none;
+}
+
+.performance-metric,
+.performance-card {
+    background: #f7fbf8;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+}
+
+.performance-metric strong,
+.performance-card strong {
+    color: var(--green);
+}
+
+#evaluationStatus {
+    background: var(--green-light);
+    color: var(--green);
+    border: 1px solid #c7e8d2;
+    border-radius: 20px;
+}
+
+/* EXPLAINABILITY */
+
+.explainability-section {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+}
+
+.explainability-card {
+    box-shadow: none;
+    border-radius: 13px;
+}
+
+.feature-bar-track {
+    background: #eaf3ed;
+    border-radius: 20px;
+}
+
+.feature-bar {
+    background: linear-gradient(90deg, #087f55, #56cf91);
+    border-radius: 20px;
+}
+
+/* ABOUT AND CONTACT */
+
+.credai-info-section {
+    background:
+        radial-gradient(circle at 10% 20%, rgba(53,184,121,0.07), transparent 30%),
+        transparent;
+}
+
+.credai-info-section h2,
+.about-content h3 {
+    color: var(--green-dark);
+}
+
+.credai-info-section h2 span,
+.contact-details strong {
+    color: var(--green);
+}
+
+.about-content {
+    padding: 35px;
+}
+
+.objective-item,
+.contact-details > div,
+.attribute-item {
+    background: #f4faf6;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+}
+
+.objective-item {
+    color: #285b40;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.objective-item:hover {
+    background: #e7f6ec;
+    transform: translateY(-3px);
+}
+
+.contact-details > div:hover {
+    border-color: #a9d9bb;
+}
+
+/* HOW CREDAI WORKS AND DATASET */
+
+.process-card {
+    padding: 25px;
+}
+
+.process-number {
+    background: var(--green-light);
+    color: var(--green);
+    border-radius: 9px;
+}
+
+.dataset-stat,
+.model-card {
+    background: linear-gradient(135deg, #073b2b, #087f55);
+    border-radius: 17px;
+}
+
+.dataset-stat h3,
+.model-details strong {
+    color: #8ce7b5;
+}
+
+/* DISCLAIMER */
+
+.disclaimer {
+    background: #fffdf5;
+    border: 1px solid #eee5c8;
+    border-radius: 13px;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #073b2b;
+    color: #c2d9cc;
+    border-top: none;
+    margin-top: 45px;
+}
+
+.footer span:first-child {
+    color: #8ce7b5;
+}
+
+/* GENERAL INTERACTIONS */
+
+button,
+a,
+input,
+select {
+    transition-duration: 0.2s;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(53,184,121,0.3);
+    outline-offset: 3px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .container {
+        width: 93%;
+    }
+
+    .hero {
+        padding: 35px;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 14px 5%;
+        justify-content: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 13px 17px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 29px 23px;
+        border-radius: 18px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .overview-grid,
+    .stats-row,
+    .analytics-grid,
+    .performance-metrics,
+    .explanation-columns,
+    .risk-factors-grid,
+    .objective-grid,
+    .contact-details {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card,
+    .model-performance-section,
+    .explainability-section {
+        padding: 19px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #submitButton {
+        width: 100%;
+    }
+
+    .history-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================================
+   CREDAI — FINAL EMERALD FINTECH THEME
+   Added after the existing rules so the current layout,
+   JavaScript hooks, charts, forms and report sections remain.
+========================================================= */
+
+:root {
+    --bg: #f3f7f4;
+    --surface: #ffffff;
+    --green-dark: #073b2b;
+    --green: #08764f;
+    --green-light: #e5f5eb;
+    --green-bright: #21a366;
+    --text: #172b22;
+    --muted: #74847a;
+    --border: #e1ebe4;
+    --red: #d84b4b;
+    --red-light: #fff0ef;
+    --shadow: 0 10px 30px rgba(7, 59, 43, 0.07);
+}
+
+/* Global finish */
+html { scroll-behavior: smooth; }
+body {
+    color: var(--text);
+    background:
+        radial-gradient(circle at 5% 5%, rgba(33,163,102,.055), transparent 25%),
+        var(--bg);
+}
+::selection { background: #c9eed7; color: #073b2b; }
+
+/* Navigation */
+.navbar, .topbar {
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 18px rgba(7,59,43,.04);
+    backdrop-filter: blur(14px);
+}
+.nav-logo, .brand strong { color: var(--green-dark); }
+.brand-mark {
+    background: linear-gradient(145deg, #08764f, #073b2b);
+    box-shadow: 0 5px 14px rgba(8,118,79,.2);
+}
+.nav-link { transition: color .2s ease; }
+.nav-link:hover { color: var(--green); }
+.logout-btn {
+    background: var(--green);
+    border-radius: 9px;
+}
+.logout-btn:hover { background: var(--green-dark); }
+
+/* Hero */
+.hero {
+    background:
+        radial-gradient(circle at 85% 18%, rgba(75,190,129,.23), transparent 30%),
+        linear-gradient(125deg, #073b2b, #0b6042 65%, #08764f);
+    box-shadow: 0 18px 42px rgba(7,59,43,.15);
+}
+.hero .eyebrow, .hero h1 span { color: #8ce2ac; }
+.hero-link {
+    background: #8ce2ac;
+    color: #073b2b;
+    box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+.hero-link:hover { background: #b0f0c5; }
+
+/* Cards */
+.overview-card, .stat-card, .chart-card, .form-card,
+.result-card, .model-performance-card, .explainability-card,
+.info-card, .about-content, .process-card, .dataset-content,
+.performance-card, .analytics-card {
+    border-color: var(--border);
+    border-radius: 17px;
+    box-shadow: var(--shadow);
+}
+.overview-card, .stat-card, .chart-card, .process-card,
+.objective-item, .contact-details > div {
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.overview-card:hover, .stat-card:hover, .process-card:hover,
+.objective-item:hover, .contact-details > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 32px rgba(7,59,43,.10);
+    border-color: #b9ddc7;
+}
+.overview-icon, .section-number, .process-number {
+    background: linear-gradient(145deg, #e8f8ed, #d3f0dd);
+    color: var(--green);
+}
+
+/* Section headings */
+.section-heading h2, .history-heading h2,
+.credai-info-section h2, .info-card h2 {
+    color: var(--green-dark);
+}
+.eyebrow, .info-label { color: var(--green); }
+
+/* Forms */
+.form-card { background: var(--surface); }
+.form-grid input, .form-grid select,
+.history-filters input, .history-filters select {
+    border: 1px solid #dce9df;
+    border-radius: 10px;
+    background: #fbfdfb;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+.form-grid input:focus, .form-grid select:focus,
+.history-filters input:focus, .history-filters select:focus {
+    border-color: var(--green-bright);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(33,163,102,.10);
+    background: #fff;
+}
+#submitButton, .download-pdf-button, .csv-select-button {
+    background: linear-gradient(135deg, #08764f, #075b3e);
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(8,118,79,.16);
+}
+#submitButton:hover:not(:disabled), .download-pdf-button:hover,
+.csv-select-button:hover {
+    background: linear-gradient(135deg, #075b3e, #06452f);
+    transform: translateY(-1px);
+}
+
+/* Risk result and labels */
+.result-card { border-top: 3px solid var(--green-bright); }
+.risk-badge.low-risk, .risk-label.low-risk {
+    background: var(--green-light);
+    color: var(--green);
+}
+.risk-badge.high-risk, .risk-label.high-risk {
+    background: var(--red-light);
+    color: var(--red);
+}
+.meter-track, .feature-bar-track { background: #e5eee7; }
+.meter-fill, .feature-bar {
+    background: linear-gradient(90deg, #08764f, #64d995);
+}
+.meter-fill.high-risk { background: linear-gradient(90deg, #d84b4b, #ef8980); }
+
+/* Analytics */
+.stat-card { background: linear-gradient(145deg, #fff, #f8fcf9); }
+.stat-card > strong { color: var(--green-dark); }
+.low-stat { border-top: 3px solid var(--green-bright); }
+.low-stat > strong { color: var(--green); }
+.high-stat { border-top: 3px solid var(--red); }
+.high-stat > strong { color: var(--red); }
+.chart-card { background: linear-gradient(145deg, #fff, #fbfefc); }
+.chart-heading h3 { color: var(--green-dark); }
+.activity-bar {
+    background: linear-gradient(180deg, #64d995, #08764f);
+}
+
+/* History table */
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #fff;
+}
+thead { background: #edf7f0; }
+th { color: #315d45; }
+tbody tr { transition: background .18s ease; }
+tbody tr:hover { background: #f0faf3; }
+
+/* Model performance and explainability */
+.model-performance-card, .explainability-card {
+    background: linear-gradient(145deg, #fff, #f8fcf9);
+}
+.performance-metric, .performance-card {
+    border-radius: 13px;
+    background: #f3faf5;
+    border-color: #e0eee4;
+}
+.performance-metric strong, .performance-card strong {
+    color: var(--green);
+}
+.evaluation-status {
+    background: var(--green-light);
+    color: var(--green);
+}
+.explanation-factor, .risk-factors-card,
+.risk-recommendations-card {
+    border-radius: 13px;
+}
+.risk-factor { border-left: 4px solid #dc6262; }
+.positive-factor { border-left: 4px solid var(--green-bright); }
+.explainability-disclaimer, .risk-factors-disclaimer {
+    background: #f0f7f2;
+    border-radius: 10px;
+}
+
+/* CSV upload */
+.csv-upload-zone {
+    border: 1.5px dashed #a9d7ba;
+    border-radius: 15px;
+    background: #f7fcf8;
+    transition: border-color .2s ease, background .2s ease;
+}
+.csv-upload-zone:hover {
+    border-color: var(--green-bright);
+    background: #effaf2;
+}
+.csv-upload-icon {
+    color: var(--green);
+}
+
+/* About, contact, dataset and process */
+.credai-info-section, .info-section {
+    background: transparent;
+}
+.about-content, .info-card, .dataset-content {
+    background: #fff;
+}
+.objective-item, .attribute-item, .contact-details > div {
+    background: #f2f8f4;
+    border: 1px solid #e0eee4;
+    border-radius: 12px;
+}
+.objective-item { color: #28563d; }
+.contact-details strong, .about-content h3,
+.info-card h2, .info-card h3 { color: var(--green); }
+.model-card, .dataset-stat {
+    background: linear-gradient(135deg, #073b2b, #087f55);
+}
+.model-icon { background: #8ce2ac; color: #073b2b; }
+
+/* Disclaimer and footer */
+.disclaimer {
+    background: #fffdf5;
+    border: 1px solid #eee5c8;
+    border-radius: 13px;
+}
+.footer {
+    background: #073b2b;
+    color: #c2d9cc;
+    border-top: 0;
+}
+.footer span:first-child { color: #8ce7b5; }
+
+/* Consistent focus and motion */
+button:focus-visible, a:focus-visible,
+input:focus-visible, select:focus-visible {
+    outline: 3px solid rgba(33,163,102,.28);
+    outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* Responsive refinements */
+@media (max-width: 900px) {
+    .container { width: 93%; }
+    .hero { padding: 35px; }
+}
+@media (max-width: 700px) {
+    .navbar { padding: 14px 5%; }
+    .nav-links { gap: 12px 16px; flex-wrap: wrap; }
+    .hero { grid-template-columns: 1fr; padding: 28px 22px; }
+    .overview-grid, .stats-row, .analytics-grid,
+    .performance-metrics, .explanation-columns,
+    .risk-factors-grid, .objective-grid, .contact-details {
+        grid-template-columns: 1fr;
+    }
+    .form-grid, .result-grid { grid-template-columns: 1fr; }
+    .form-card, .result-card, .about-content { padding: 21px; }
+    .form-actions { align-items: stretch; flex-direction: column; }
+    #submitButton { width: 100%; }
+}
+
+/* =========================================
+   CREDAI - VERTICAL SIDEBAR NAVIGATION
+========================================= */
+
+:root {
+    --sidebar-width: 255px;
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #52645b;
+    --sidebar-green: #087a4b;
+    --sidebar-dark: #10251b;
+    --sidebar-hover: #edf7f2;
+}
+
+body {
+    padding-left: var(--sidebar-width);
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    padding: 28px 18px 20px;
+    background: var(--sidebar-bg);
+    border-right: 1px solid #e7eee9;
+    display: flex;
+    flex-direction: column;
+    z-index: 2000;
+    box-shadow: 4px 0 20px rgba(16, 37, 27, 0.035);
+}
+
+/* Sidebar brand */
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--sidebar-dark);
+    padding: 0 8px 35px;
+}
+
+.sidebar-brand .brand-mark {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: var(--sidebar-dark);
+    color: white;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.sidebar-brand strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.sidebar-brand small {
+    display: block;
+    margin-top: 4px;
+    color: #718078;
+    font-size: 9px;
+    letter-spacing: 1.4px;
+    font-weight: 700;
+}
+
+/* Menu heading */
+.sidebar-label {
+    padding: 0 12px;
+    margin: 5px 0 13px;
+    color: #9aa79f;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+/* Navigation links */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.sidebar-link {
+    width: 100%;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 0 13px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    text-align: left;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background: var(--sidebar-hover);
+    color: var(--sidebar-green);
+    transform: translateX(2px);
+}
+
+.sidebar-link.active {
+    background: #e7f5ed;
+    color: var(--sidebar-green);
+    font-weight: 750;
+}
+
+.sidebar-icon {
+    width: 22px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: currentColor;
+}
+
+/* Bottom section */
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.sidebar-logout {
+    margin-bottom: 20px;
+}
+
+.sidebar-footer {
+    border-top: 1px solid #edf1ee;
+    padding: 18px 10px 0 28px;
+    position: relative;
+    color: #53675d;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.sidebar-status-dot {
+    position: absolute;
+    left: 10px;
+    top: 22px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #20b77a;
+}
+
+.sidebar-footer small {
+    display: block;
+    margin-top: 5px;
+    color: #9aa79f;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+/* Main page alignment */
+.topbar {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container {
+    width: min(100% - 48px, 1260px);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.footer {
+    margin-left: 0;
+}
+
+/* Hide old horizontal navigation */
+.nav-links {
+    display: none !important;
+}
+
+/* Responsive layout */
+@media (max-width: 850px) {
+    :root {
+        --sidebar-width: 215px;
+    }
+
+    .sidebar {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .container {
+        width: calc(100% - 30px);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-left: 0;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 12px;
+        border-right: none;
+        border-bottom: 1px solid #e7eee9;
+        box-shadow: none;
+    }
+
+    .sidebar-brand {
+        padding: 0 5px 14px;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .sidebar-link {
+        width: auto;
+        min-height: 38px;
+        padding: 0 9px;
+        font-size: 11px;
+    }
+
+    .sidebar-icon {
+        width: auto;
+        font-size: 16px;
+    }
+
+    .sidebar-label,
+    .sidebar-bottom,
+    .sidebar-footer {
+        display: none;
+    }
+
+    .container {
+        width: calc(100% - 24px);
+    }
+}
+
+
+/* =========================================
+   CREDAI — SEPARATE DASHBOARD PAGE VIEWS
+========================================= */
+
+.main-content {
+    width: min(100% - 54px, 1280px);
+    margin: 0 auto;
+    padding: 34px 0 48px;
+    min-height: calc(100vh - 90px);
+}
+
+.page-view {
+    display: none;
+    animation: credaiPageIn 0.25s ease;
+}
+
+.page-view.active {
+    display: block;
+}
+
+.page-view[hidden] {
+    display: none !important;
+}
+
+.page-title {
+    margin: 4px 0 24px;
+}
+
+.page-title h1 {
+    margin-top: 5px;
+    color: var(--green-dark);
+    font-size: clamp(27px, 3vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.page-title p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.page-view > .overview-grid {
+    margin-top: 0;
+}
+
+.page-view > .section-heading:first-child,
+.page-view > .history-heading:first-child {
+    margin-top: 5px;
+}
+
+#modelPerformance,
+#explainability {
+    margin-top: 0;
+}
+
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.performance-card {
+    min-width: 0;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.performance-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: linear-gradient(180deg, #32a66a, #176b45);
+}
+
+.performance-card > span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.performance-card > strong {
+    display: block;
+    margin-top: 10px;
+    color: var(--green-dark);
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.performance-card > small {
+    display: block;
+    margin-top: 9px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+#csvFile {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.csv-upload-zone:focus-within .csv-select-button {
+    outline: 3px solid rgba(50, 166, 106, 0.35);
+    outline-offset: 3px;
+}
+
+@keyframes credaiPageIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 850px) {
+    .main-content {
+        width: calc(100% - 32px);
+    }
+}
+
+@media (max-width: 650px) {
+    .main-content {
+        width: calc(100% - 24px);
+        padding-top: 24px;
+    }
+
+    .performance-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   CREDAI - PREMIUM FINTECH BACKGROUND
+========================================= */
+
+/* FinTech hero background */
+.hero {
+    background:
+        radial-gradient(
+            circle at 80% 45%,
+            rgba(50, 166, 106, 0.35),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(140, 226, 172, 0.13),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #071e14,
+            #103e2b,
+            #145b3b
+        );
+
+    border: 1px solid rgba(140, 226, 172, 0.18);
+}
+
+/* Subtle financial technology grid */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(140, 226, 172, 0.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(140, 226, 172, 0.055) 1px,
+            transparent 1px
+        );
+
+    background-size: 38px 38px;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+/* Emerald glow behind financial illustration */
+.hero-art::before {
+    content: "";
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+    background: rgba(50, 166, 106, 0.22);
+    filter: blur(65px);
+
+    z-index: 0;
+}
+
+/* Financial analytics glass card */
+.art-card {
+    border: 1px solid rgba(140, 226, 172, 0.25);
+
+    background: rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.20),
+        0 0 30px rgba(50, 166, 106, 0.12);
+}
+
+/* Floating analytics badge */
+.floating-badge {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+}
+
+/* Keep dashboard cards clean */
+.overview-card,
+.chart-card,
+.stat-card,
+.form-card {
+    background: #ffffff;
+    border: 1px solid #e1ebe3;
+    box-shadow: 0 10px 30px rgba(16, 60, 36, 0.055);
+}
+
+/* ==========================================
+   CREDAI - EMERALD FINTECH HERO BACKGROUND
+========================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 72% 45%,
+            rgba(0, 255, 170, 0.30),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(0, 190, 130, 0.35),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 90%,
+            rgba(170, 255, 220, 0.25),
+            transparent 40%
+        ),
+        linear-gradient(
+            115deg,
+            #dff8ee 0%,
+            #9ce5cc 35%,
+            #159b70 70%,
+            #006b4b 100%
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* Subtle technology grid */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.13) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.13) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 35%,
+        black
+    );
+}
+
+/* Glowing AI effect */
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: 8%;
+    top: 5%;
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: rgba(0, 255, 170, 0.22);
+    filter: blur(100px);
+}
+
+/* Keep hero content above background */
+.hero-copy,
+.hero-art {
+    position: relative;
+    z-index: 2;
+}
+
+/* Financial illustration area */
+.hero-art {
+    isolation: isolate;
+}
+
+/* Glass effect for existing illustration cards */
+.art-card {
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 70, 45, 0.16),
+        0 0 25px rgba(0, 255, 170, 0.12);
+}
+
+/* Keep dashboard cards white and clean */
+.overview-card,
+.chart-card,
+.stat-card,
+.form-card {
+    background: #ffffff;
+    border: 1px solid #dcefe5;
+    box-shadow: 0 10px 30px rgba(0, 70, 45, 0.06);
+}
+
+/* =====================================
+   CREDAI EMERALD FINTECH BACKGROUND
+===================================== */
+
+.dashboard-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    padding: 45px 35px;
+    margin-bottom: 30px;
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(255, 255, 255, 0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(0, 255, 170, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #d9f7e9 0%,
+            #8eddbb 35%,
+            #24a875 70%,
+            #075c3e 100%
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 80, 50, 0.12);
+}
+
+/* Technology grid pattern */
+
+.dashboard-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,0.17) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.17) 1px, transparent 1px);
+
+    background-size: 38px 38px;
+    mask-image: linear-gradient(to right, transparent, black);
+}
+
+/* Glowing financial background circles */
+
+.dashboard-hero::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    right: 8%;
+    top: -100px;
+    z-index: -1;
+
+    border-radius: 50%;
+    background: rgba(0, 255, 170, 0.30);
+    filter: blur(75px);
+}
+
+/* Welcome heading */
+
+.dashboard-hero .page-title {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    margin-bottom: 35px;
+}
+
+/* Heading colors */
+
+.dashboard-hero .page-title h1 {
+    color: #073c29;
+}
+
+.dashboard-hero .page-title p {
+    color: #164e38;
+}
+
+/* Keep overview cards clean */
+
+.dashboard-hero .overview-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 25px rgba(0, 70, 45, 0.10);
+    backdrop-filter: blur(10px);
+}
+
+/* ==========================================
+   CREDAI - FULL EMERALD FINTECH BACKGROUND
+========================================== */
+
+/* Full dashboard background */
+#dashboardPage {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            ellipse at 80% 15%,
+            rgba(80, 255, 190, 0.35),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 10% 80%,
+            rgba(255, 255, 255, 0.65),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 90% 90%,
+            rgba(0, 100, 65, 0.25),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #e2f8ed 0%,
+            #b5ebd2 30%,
+            #68c99e 65%,
+            #16865b 100%
+        );
+
+    padding: 30px;
+    border-radius: 18px;
+}
+
+/* Technology grid across the entire background */
+#dashboardPage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.18) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.18) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+}
+
+/* Soft emerald glow */
+#dashboardPage::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    right: 5%;
+    top: 15%;
+    z-index: -1;
+    pointer-events: none;
+
+    background: rgba(0, 255, 170, 0.25);
+    filter: blur(100px);
+    border-radius: 50%;
+}
+
+/* Remove the smaller hero background */
+#dashboardPage .dashboard-hero {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 20px 0;
+    margin: 0;
+    overflow: visible;
+}
+
+/* Remove old hero decorations */
+#dashboardPage .dashboard-hero::before,
+#dashboardPage .dashboard-hero::after {
+    display: none;
+}
+
+/* Welcome heading */
+#dashboardPage .page-title,
+#dashboardPage .overview-grid {
+    position: relative;
+    z-index: 1;
+}
+
+/* Dark green heading text */
+#dashboardPage .page-title h1 {
+    color: #073c29;
+}
+
+#dashboardPage .page-title p {
+    color: #205d43;
+}
+
+/* White glass-style overview cards */
+#dashboardPage .overview-card {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 70, 45, 0.10);
+}
+
+/* ==========================================
+   CREDAI - FULL DASHBOARD FINTECH BACKGROUND
+========================================== */
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            ellipse at 80% 10%,
+            rgba(0, 180, 125, 0.30),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 45% 45%,
+            rgba(140, 235, 200, 0.35),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 95% 85%,
+            rgba(0, 125, 85, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #e9faf3,
+            #c8f0df 45%,
+            #e8f8f0
+        );
+
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Full-page technology network pattern */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(circle, rgba(0, 150, 100, 0.25) 1.5px, transparent 2px),
+        linear-gradient(rgba(0, 130, 90, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 130, 90, 0.045) 1px, transparent 1px);
+
+    background-size:
+        90px 90px,
+        45px 45px,
+        45px 45px;
+
+    opacity: 0.65;
+}
+
+/* Soft emerald glow */
+body::after {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    top: 10%;
+    right: 5%;
+    border-radius: 50%;
+    background: rgba(0, 220, 150, 0.16);
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep all dashboard content above background */
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Main content areas remain transparent */
+main,
+.main-content,
+.dashboard-content,
+.content-area {
+    background: transparent !important;
+}
+
+/* Hero section blends into the full background */
+.hero {
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+}
+
+/* Keep sidebar white */
+.sidebar,
+aside {
+    background: #ffffff !important;
+}
+
+/* Keep dashboard cards white */
+.overview-card,
+.chart-card,
+.stat-card,
+.form-card,
+.card,
+.analytics-card {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(0, 130, 85, 0.13);
+    box-shadow: 0 10px 30px rgba(0, 80, 50, 0.07);
+}
+
+/* CREDAI AI ASSISTANT DASHBOARD SECTION */
+
+.credai-assistant-section {
+    margin: 30px 0;
+    padding: 28px;
+    background: linear-gradient(135deg, #e9f8ef, #ffffff);
+    border: 1px solid #d6ebdd;
+    border-radius: 18px;
+}
+
+.assistant-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.assistant-label {
+    color: #087a4b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.assistant-heading h2 {
+    color: #064e35;
+    margin: 8px 0;
+    font-size: 23px;
+}
+
+.assistant-heading p {
+    color: #64756a;
+    font-size: 13px;
+}
+
+.assistant-icon {
+    font-size: 42px;
+    background: #d5f3df;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.assistant-chat-box {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #e2eee6;
+}
+
+.assistant-welcome {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px;
+    background: #f0faf3;
+    border-radius: 12px;
+}
+
+.assistant-welcome > span {
+    font-size: 28px;
+}
+
+.assistant-welcome h3 {
+    color: #087a4b;
+    font-size: 15px;
+    margin: 0 0 6px;
+}
+
+.assistant-welcome p {
+    color: #64756a;
+    font-size: 12px;
+    margin: 0;
+}
+
+#assistant-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.assistant-bot-message,
+.assistant-user-message {
+    padding: 12px 15px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 85%;
+    overflow-wrap: anywhere;
+}
+
+.assistant-bot-message {
+    background: #e8f6ed;
+    color: #075b3c;
+    align-self: flex-start;
+}
+
+.assistant-user-message {
+    background: #087a4b;
+    color: white;
+    align-self: flex-end;
+}
+
+.assistant-quick-questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.assistant-question {
+    background: #f0faf3;
+    color: #087a4b;
+    border: 1px solid #b8dfc6;
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.assistant-question:hover {
+    background: #087a4b;
+    color: white;
+}
+
+#assistant-form {
+    display: flex;
+    gap: 10px;
+}
+
+#assistant-input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 16px;
+    border: 1px solid #d5e5db;
+    border-radius: 25px;
+    outline: none;
+}
+
+#assistant-input:focus {
+    border-color: #087a4b;
+}
+
+#assistant-form button {
+    width: 46px;
+    border: none;
+    border-radius: 50%;
+    background: #087a4b;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media(max-width:600px) {
+    .credai-assistant-section {
+        padding: 16px;
+    }
+
+    .assistant-heading h2 {
+        font-size: 19px;
+    }
+}
+/* Large CSV results table */
+#csvResultsSection {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+}
+
+#csvResultsSection .table-container {
+    width: 100%;
+    max-height: 600px;
+    overflow: auto;
+}
+
+#csvResultsSection table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+}
+
+#csvResultsSection thead {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #e4f4e9;
+}
+
+#csvResultsSection th,
+#csvResultsSection td {
+    white-space: nowrap;
+    padding: 12px;
+}
+
+/* =========================================
+   CREDAI CSV RESULTS PAGINATION
+========================================= */
+
+#csvResultsSection {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+}
+
+#csvResultsSection .table-container {
+    width: 100%;
+    max-width: 100%;
+    max-height: 600px;
+    overflow: auto;
+}
+
+#csvResultsBody tr {
+    display: table-row;
+}
+
+#csvResultsSection table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+}
+
+#csvResultsSection th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #e4f4e9;
+}
+
+.csv-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 18px 10px;
+    margin-top: 15px;
+    border-top: 1px solid #e5ebe6;
+}
+
+.csv-pagination-info {
+    color: #53665b;
+    font-size: 14px;
+}
+
+.csv-pagination-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.csv-pagination-buttons button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    background: #176b45;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.csv-pagination-buttons button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.csv-pagination-buttons span {
+    font-size: 13px;
+    color: #53665b;
+}
+
+@media (max-width: 600px) {
+    .csv-pagination {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .csv-pagination-buttons {
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10251b">
+    <title>CredAI | Credit Risk Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body id="home">
+
+<!-- SIDEBAR NAVIGATION -->
+<aside class="sidebar">
+    <a class="sidebar-brand" href="#home">
+        <span class="brand-mark">C</span>
+        <span>
+            <strong>CredAI</strong>
+            <small>AI CREDIT INTELLIGENCE</small>
+        </span>
+    </a>
+
+    <p class="sidebar-label">MAIN MENU</p>
+
+    <nav class="sidebar-nav">
+        <a href="#dashboardPage" class="sidebar-link active" data-page-target="dashboardPage">
+            <span class="sidebar-icon">⌂</span>
+            Dashboard
+        </a>
+
+        <a href="#assessmentPage" class="sidebar-link" data-page-target="assessmentPage">
+            <span class="sidebar-icon">＋</span>
+            New Assessment
+        </a>
+
+        <a href="#historyPage" class="sidebar-link" data-page-target="historyPage">
+            <span class="sidebar-icon">▤</span>
+            Prediction History
+        </a>
+
+        <a href="#performancePage" class="sidebar-link" data-page-target="performancePage">
+            <span class="sidebar-icon">▥</span>
+            Model Performance
+        </a>
+
+        <a href="#explainabilityPage" class="sidebar-link" data-page-target="explainabilityPage">
+            <span class="sidebar-icon">◈</span>
+            Model Explainability
+        </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <p class="sidebar-label">ACCOUNT</p>
+
+        <button class="sidebar-link sidebar-logout"
+                onclick="logoutUser()">
+            <span class="sidebar-icon">↪</span>
+            Logout
+        </button>
+
+        <div class="sidebar-footer">
+            <span class="sidebar-status-dot"></span>
+            CredAI System
+            <small>Version 1.0</small>
+        </div>
+    </div>
+</aside>
+
+
+<main class="main-content">
+    <!-- DASHBOARD PAGE -->
+    
+<!-- DASHBOARD PAGE -->
+<section class="page-view active" id="dashboardPage" data-page="dashboard">
+
+    <!-- EMERALD FINTECH HERO BACKGROUND -->
+    <div class="dashboard-hero">
+
+        <div class="page-title">
+            <span class="eyebrow">OVERVIEW</span>
+            <h1>Welcome to CredAI</h1>
+            <p>AI-powered credit risk assessment and loan default insights.</p>
+        </div>
+
+        <!-- SYSTEM OVERVIEW -->
+        <section class="overview-grid" aria-label="System overview">
+
+            <article class="overview-card">
+                <span class="overview-icon">✳</span>
+                <div>
+                    <p>Prediction engine</p>
+                    <h2>Random Forest</h2>
+                    <small>Machine learning classifier</small>
+                </div>
+            </article>
+
+            <article class="overview-card">
+                <span class="overview-icon">◷</span>
+                <div>
+                    <p>Assessment mode</p>
+                    <h2>On demand</h2>
+                    <small>CSV batch assessment</small>
+                </div>
+            </article>
+
+            <article class="overview-card">
+                <span class="overview-icon">⌁</span>
+                <div>
+                    <p>Backend status</p>
+                    <h2 id="modelStatus">Checking...</h2>
+                    <small id="apiMessage">Connecting to Flask API</small>
+                </div>
+                
+            </article>
+
+        </section>
+
+    </div>
+    
+<!-- CredAI AI Assistant Section -->
+<section class="credai-assistant-section">
+
+    <div class="assistant-heading">
+        <div>
+            <span class="assistant-label">INTELLIGENT SUPPORT</span>
+            <h2>Meet Your CredAI Assistant</h2>
+            <p>Ask questions about credit risk, loan defaults and machine learning.</p>
+        </div>
+
+        <div class="assistant-icon">🤖</div>
+    </div>
+
+    <div class="assistant-chat-box">
+        <div class="assistant-welcome">
+            <span>👋</span>
+            <div>
+                <h3>Hello! I'm CredAI Assistant</h3>
+                <p>How can I help you understand credit risk today?</p>
+            </div>
+        </div>
+
+        <div id="assistant-messages"></div>
+
+        <div class="assistant-quick-questions">
+            <button class="assistant-question">What is credit risk?</button>
+            <button class="assistant-question">Explain Random Forest</button>
+            <button class="assistant-question">What is loan default?</button>
+        </div>
+
+        <form id="assistant-form">
+            <input
+                type="text"
+                id="assistant-input"
+                placeholder="Ask your financial question..."
+                required
+            >
+            <button type="submit">➤</button>
+        </form>
+    </div>
+
+</section>
+
+</section>
+
+
+    <!-- NEW ASSESSMENT PAGE -->
+    <section class="page-view" id="assessmentPage" data-page="assessment">
+        <!-- BORROWER PROFILE - CSV UPLOAD -->
+        <section class="section-heading" id="borrowerForm">
+            <div>
+                <span class="eyebrow">BORROWER PROFILE</span>
+                <h2>Import borrower data</h2>
+                <p>
+                    Upload a CSV file to assess multiple borrowers using
+                    machine learning.
+                </p>
+            </div>
+
+            <span class="field-count">CSV UPLOAD</span>
+        </section>
+
+        <form id="csvUploadForm" class="form-card">
+
+            <div class="form-section-title">
+                <span class="section-number">01</span>
+                <div>
+                    <h3>Upload borrower dataset</h3>
+                    <p>Import financial information and borrower profiles</p>
+                </div>
+            </div>
+
+            <div class="csv-upload-zone">
+                <div class="csv-upload-icon">📊</div>
+
+                <h3>Select your CSV file</h3>
+                <p>Choose a CSV file containing borrower records.</p>
+
+                <label for="csvFile" class="csv-select-button">
+                    Choose CSV File
+                </label>
+
+                <input
+                    type="file"
+                    id="csvFile"
+                    name="file"
+                    accept=".csv,text/csv"
+                    required
+                >
+
+                <p id="csvFileName" class="csv-file-name">
+                    No file selected
+                </p>
+            </div>
+
+            <div class="form-actions csv-actions">
+
+                <button
+                    type="button"
+                    id="downloadCsvTemplateButton"
+                    class="secondary-button"
+                >
+                    ↓ Download CSV Template
+                </button>
+
+                <button type="submit" id="csvUploadButton">
+                    <span>Upload &amp; Assess Borrowers</span>
+                    <span>↗</span>
+                </button>
+
+            </div>
+
+            <p
+                id="csvUploadMessage"
+                class="form-message"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+        </form>
+
+        <!-- CSV PREDICTION RESULTS -->
+        <section id="csvResultsSection" class="result-card" hidden>
+
+            <div class="result-heading">
+                <div>
+                    <span class="eyebrow">BATCH ASSESSMENT</span>
+                    <h2>CSV prediction results</h2>
+                </div>
+            </div>
+
+            <p id="csvResultSummary"></p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Borrower</th>
+                            <th>Credit Score</th>
+                            <th>Loan Amount</th>
+                            <th>Risk Result</th>
+                            <th>Default Probability</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="csvResultsBody"></tbody>
+                </table>
+            </div>
+
+            <p class="result-note">
+                These are experimental machine-learning estimates, not
+                loan approval or rejection decisions.
+            </p>
+
+        </section>
+
+        <!-- ASSESSMENT RESULT -->
+        <section id="result" class="result-card" hidden aria-live="polite">
+
+            <div class="result-heading">
+                <div>
+                    <span class="eyebrow">ASSESSMENT RESULT</span>
+                    <h2>Your risk estimate</h2>
+                </div>
+
+                <span id="riskBadge" class="risk-badge">Result</span>
+            </div>
+
+            <div class="result-grid">
+
+                <div class="risk-summary">
+                    <p>Predicted category</p>
+                    <h3 id="riskResult">Waiting for prediction</h3>
+                    <p id="riskExplanation">
+                        Your result will appear here.
+                    </p>
+                </div>
+
+                <div class="probability-panel">
+                    <p>Estimated default probability</p>
+
+                    <div class="probability-line">
+                        <strong id="probabilityResult">—</strong>
+                        <span>out of 100%</span>
+                    </div>
+
+                    <div class="meter-track">
+                        <div id="riskMeterFill" class="meter-fill"></div>
+                    </div>
+
+                    <div class="meter-labels">
+                        <span>0%</span>
+                        <span>100%</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <p id="resultNote" class="result-note">
+                This is an experimental model estimate.
+            </p>
+
+            <!-- RISK FACTORS AND RECOMMENDATIONS -->
+            <div id="riskFactorsSection" class="risk-factors-section" hidden>
+
+                <div class="risk-factors-heading">
+                    <span class="eyebrow">ASSESSMENT INSIGHTS</span>
+                    <h3>Risk Factors &amp; Recommendations</h3>
+
+                    <p>
+                        These indicators are based on the borrower information
+                        entered and are not the model's exact explanation.
+                    </p>
+                </div>
+
+                <div class="risk-factors-grid">
+
+                    <div class="risk-factors-card">
+                        <h4>Factors to Review</h4>
+                        <ul id="riskFactorsList">
+                            <li>No factors available.</li>
+                        </ul>
+                    </div>
+
+                    <div class="risk-recommendations-card">
+                        <h4>Recommendations</h4>
+                        <ul id="recommendationsList">
+                            <li>No recommendations available.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <p class="risk-factors-disclaimer">
+                    Screening indicators use illustrative thresholds.
+                    They do not establish creditworthiness or determine
+                    loan approval.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </section>
+
+    <!-- PREDICTION HISTORY PAGE -->
+    <section class="page-view" id="historyPage" data-page="history">
+        <!-- PREDICTION HISTORY -->
+        <section class="history-section" id="history">
+
+            <div class="history-heading">
+                <div>
+                    <span class="eyebrow">PREVIOUS ASSESSMENTS</span>
+                    <h2>Prediction history</h2>
+                    <p>Records loaded from the backend SQLite database.</p>
+                </div>
+
+                <div class="history-actions">
+
+                    <button
+                        id="exportHistoryButton"
+                        class="secondary-button"
+                        type="button"
+                    >
+                        ↓ Export CSV
+                    </button>
+
+                    <button
+                        id="clearHistoryButton"
+                        class="secondary-button"
+                        type="button"
+                    >
+                        Clear history
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- ANALYTICS SUMMARY CARDS -->
+            <div class="stats-row analytics-stats">
+
+                <article class="stat-card">
+                    <span>Total predictions</span>
+                    <strong id="historyCount">0</strong>
+                    <small>Records returned by the API</small>
+                </article>
+
+                <article class="stat-card low-stat">
+                    <span>Low-risk predictions</span>
+                    <strong id="lowRiskCount">0</strong>
+                    <small>Classified as lower risk</small>
+                </article>
+
+                <article class="stat-card high-stat">
+                    <span>High-risk predictions</span>
+                    <strong id="highRiskCount">0</strong>
+                    <small>Classified as higher risk</small>
+                </article>
+
+            </div>
+
+            <!-- ANALYTICS CHARTS -->
+            <section class="analytics-grid" aria-label="Prediction analytics">
+
+                <article class="chart-card">
+
+                    <div class="chart-heading">
+                        <div>
+                            <h3>Risk distribution</h3>
+                            <p>Low-risk compared with high-risk records</p>
+                        </div>
+                    </div>
+
+                    <div class="donut-layout">
+
+                        <div
+                            id="riskDonut"
+                            class="risk-donut"
+                            role="img"
+                            aria-label="Risk distribution chart"
+                        >
+                            <div class="donut-hole">
+                                <strong id="donutTotal">0</strong>
+                                <span>records</span>
+                            </div>
+                        </div>
+
+                        <div class="chart-legend">
+
+                            <div>
+                                <span class="legend-dot low-dot"></span>
+                                <span>Low risk</span>
+                                <strong id="lowRiskLegend">0</strong>
+                            </div>
+
+                            <div>
+                                <span class="legend-dot high-dot"></span>
+                                <span>High risk</span>
+                                <strong id="highRiskLegend">0</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <p id="riskChartEmpty" class="chart-empty">
+                        Your risk chart will appear after the first prediction.
+                    </p>
+
+                </article>
+
+                <article class="chart-card">
+
+                    <div class="chart-heading">
+                        <div>
+                            <h3>Prediction activity</h3>
+                            <p>Number of records by date</p>
+                        </div>
+                    </div>
+
+                    <div
+                        id="activityChart"
+                        class="activity-chart"
+                        role="img"
+                        aria-label="Prediction activity chart"
+                    ></div>
+
+                    <p id="activityChartEmpty" class="chart-empty">
+                        Activity will appear after predictions are saved.
+                    </p>
+
+                </article>
+
+            </section>
+
+            <!-- HISTORY STATUS -->
+            <div
+                id="historyMessage"
+                class="history-message"
+                role="status"
+            >
+                Loading prediction history...
+            </div>
+
+            <!-- SEARCH AND FILTER -->
+            <div class="history-filters">
+
+                <input
+                    type="text"
+                    id="historySearch"
+                    placeholder="Search by credit score or loan amount..."
+                    aria-label="Search prediction history"
+                >
+
+                <select id="riskFilter" aria-label="Filter by risk level">
+                    <option value="all">All risk levels</option>
+                    <option value="low">Low Risk</option>
+                    <option value="high">High Risk</option>
+                </select>
+
+                <select id="sortHistory" aria-label="Sort prediction history">
+                    <option value="newest">Newest first</option>
+                    <option value="oldest">Oldest first</option>
+                </select>
+
+            </div>
+
+            <!-- PREDICTION HISTORY TABLE -->
+            <div class="table-wrap">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date &amp; time</th>
+                            <th>Credit score</th>
+                            <th>Loan amount</th>
+                            <th>Risk result</th>
+                            <th>Default probability</th>
+                            <th>Report</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="historyTableBody"></tbody>
+                </table>
+
+            </div>
+
+            <p class="history-footnote">
+                History is retrieved from the SQLite database managed by
+                your Flask backend.
+            </p>
+
+        </section>
+
+
+    </section>
+
+    <!-- MODEL PERFORMANCE PAGE -->
+    <section class="page-view" id="performancePage" data-page="performance">
+        <!-- MODEL PERFORMANCE -->
+        <section class="model-performance-section" id="modelPerformance">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">MACHINE LEARNING EVALUATION</span>
+                    <h2>Model Performance</h2>
+                    <p>
+                        Evaluation results from the optimized Random Forest model.
+                    </p>
+                </div>
+
+                <span id="evaluationStatus" class="field-count">
+                    Loading metrics...
+                </span>
+            </div>
+
+            <div class="performance-grid">
+
+                <article class="performance-card">
+                    <span>Accuracy</span>
+                    <strong id="modelAccuracy">—</strong>
+                    <small>Overall correct predictions</small>
+                </article>
+
+                <article class="performance-card">
+                    <span>Precision</span>
+                    <strong id="modelPrecision">—</strong>
+                    <small>Correct default predictions among flagged defaults</small>
+                </article>
+
+                <article class="performance-card">
+                    <span>Recall</span>
+                    <strong id="modelRecall">—</strong>
+                    <small>Actual defaults detected</small>
+                </article>
+            
+
+            </div>
+
+        </section>
+
+
+    </section>
+
+    <!-- MODEL EXPLAINABILITY PAGE -->
+    <section class="page-view" id="explainabilityPage" data-page="explainability">
+        <!-- MODEL EXPLAINABILITY -->
+        <section class="explainability-section" id="explainability">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">MODEL INTERPRETABILITY</span>
+                    <h2>Model Explainability</h2>
+
+                    <p>
+                        Discover which features contribute most to the
+                        overall predictions of the trained Random Forest model.
+                    </p>
+                </div>
+
+                <span id="explainabilityStatus" class="field-count">
+                    Loading...
+                </span>
+            </div>
+
+            <article class="explainability-card">
+
+                <div class="chart-heading">
+                    <div>
+                        <h3>Top 15 Feature Importance</h3>
+                        <p>Relative importance of input features (%)</p>
+                    </div>
+                </div>
+
+                <div
+                    id="featureImportanceChart"
+                    class="feature-importance-chart"
+                >
+                    <p>Loading feature importance...</p>
+                </div>
+
+                <p
+                    id="featureImportanceMessage"
+                    class="explainability-message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+            </article>
+
+            <p class="explainability-disclaimer">
+                Feature importance represents global model-level contribution.
+                It does not establish causation or explain an individual
+                borrower's prediction. These values should not be interpreted
+                as financial advice or as a basis for automatic loan decisions.
+            </p>
+
+        </section>
+
+
+    </section>
+
+        <!-- DISCLAIMER -->
+        <section class="disclaimer">
+            <span class="disclaimer-icon">ⓘ</span>
+
+            <p>
+                <strong>Important:</strong>
+                This academic prototype provides an experimental
+                machine-learning estimate. It is not a guarantee of repayment
+                and must not be used alone to approve or reject a loan.
+            </p>
+        </section>
+
+
+</main>
+
+<footer class="footer">
+    <span>CredAI</span>
+    <span>AI-Based Credit Risk Assessment and Loan Default Prediction</span>
+</footer>
+
+</body>
+</html>

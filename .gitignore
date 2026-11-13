@@ -1,0 +1,23 @@
+
+# Python virtual environment
+venv/
+backend/venv/
+__pycache__/
+*.pyc
+
+# Model files
+*.joblib
+*.pkl
+
+# Database
+*.db
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
