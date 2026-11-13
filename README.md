@@ -226,7 +226,7 @@ Add your actual application screenshots here.
 <img width="1920" height="916" alt="Screenshot (93)" src="https://github.com/user-attachments/assets/05116288-da2d-446c-86ee-74f54c4c84da" />
 <img width="1920" height="939" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/c37dbd3b-8ec4-4940-8a8f-bb59f0647435" />
 <img width="1920" height="928" alt="Screenshot (91)" src="https://github.com/user-attachments/assets/3a37756e-3562-48a1-adff-1843017a039f" />
-<img width="1920" height="926" alt="Screenshot (90)" src="https://github.com/user-attachments/assets/2e9549f2-4f9f-4e35-ae1a-1dd6df284013" />
+
 
 
 
